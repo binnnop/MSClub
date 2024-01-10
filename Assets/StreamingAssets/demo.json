@@ -1,0 +1,223 @@
+[
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 5
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 10
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 10
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 10
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 10
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 10
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 10
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 5
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 5
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 5
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 5
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 5
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 3
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 3
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 3
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 3
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 3
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 3
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 1
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 1
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 1
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 1
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 1
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 1
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 1
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 1
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 1
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 1
+    },
+    {
+        "monsterPrefab": "清道夫",
+        "spawnPointIndex": 0,
+        "spawnInterval": 1
+    }
+    ,
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 5
+    }
+    ,
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 5
+    }
+    ,
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 5
+    }
+    ,
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 5
+    }
+    ,
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 5
+    },
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 2
+    },
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 2
+    },
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 2
+    },
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 2
+    },
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 2
+    },
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 2
+    },
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 2
+    },
+    {
+        "monsterPrefab": "清道夫2",
+        "spawnPointIndex": 0,
+        "spawnInterval": 2
+    }
+    ,
+    {
+        "monsterPrefab": "清道夫3",
+        "spawnPointIndex": 0,
+        "spawnInterval": 5
+    }
+]

@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2081873651503153701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1336309597807103741}
+  - component: {fileID: 8759051751249351767}
+  m_Layer: 0
+  m_Name: test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1336309597807103741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081873651503153701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 50.86549, y: 120.00893, z: -146.96606}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8759051751249351767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081873651503153701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 371e52d229c4f084aaacb976f6bdb31f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefabs:
+  - {fileID: 6151904148790511991, guid: ec7a560315add044e82ca9ec90fa458c, type: 3}
+  - {fileID: 1215712604386794735, guid: 05b7105621c13e149b1ca65553187fc0, type: 3}
+  - {fileID: 7671092013199138460, guid: dbd74adfdad8e6142bf6f9e45e934909, type: 3}
+  - {fileID: 8800624529875053107, guid: fbcdc6401cac69b4093c6b0b3cc359ab, type: 3}
+  - {fileID: 2085753423850997839, guid: af1531c40678ca6439a0fe6c6f56c820, type: 3}
+  - {fileID: 8800624529875053107, guid: fc1febe525430c84c8e16f44fd30031e, type: 3}
+  - {fileID: 6151904148790511991, guid: 59ee55091877bda47bd8ae28ec46e11c, type: 3}
+  - {fileID: 1215712604386794735, guid: 1b6ec3cc7f629e74e8bc6484a70e8d62, type: 3}
+  - {fileID: 6151904148790511991, guid: e87f643ba93c9844a85b1ef326b7c580, type: 3}
+  - {fileID: 6151904148790511991, guid: de3171d6c71e02f4f8791d5a57f9cac2, type: 3}
+  - {fileID: 2085753423850997839, guid: ce365dd24dfa3f84b8beb17b84148b21, type: 3}
+  - {fileID: 1215712604386794735, guid: 2a1cdab860b941f4ebc05588e5a7f5b7, type: 3}
+  - {fileID: 6151904148790511991, guid: 13ce27d910b97da41a1e3591aa3351f1, type: 3}
+  - {fileID: 6151904148790511991, guid: 3a0d375734e2a0c499d9a9cceaf41272, type: 3}
+  - {fileID: 6151904148790511991, guid: 76e632ca5936a2a4f8e2c501c7ff4bbe, type: 3}
+  cardPrefabs:
+  - {fileID: 2839552044300696790, guid: 0a698dcff61b4e34c930a3fea308663f, type: 3}
+  - {fileID: 697966319674152361, guid: c2bf88842a704594a8219b0a91c3f7c4, type: 3}
+  - {fileID: 1727997380957700865, guid: ba0cbcc2155a20045bc8497eaced3f7e, type: 3}
+  - {fileID: 7598099186917606607, guid: a41cf9ccd9f8af449b667445c55b3978, type: 3}
+  - {fileID: 2839552044300696790, guid: 9fb187fdde1173248a59a687c000e2e8, type: 3}
+  - {fileID: 7598099186917606607, guid: 137186ea04f3cb94abca56850e751e82, type: 3}
+  - {fileID: 2839552044300696790, guid: cbb2445b1b20d5f45904f482c3f5cf17, type: 3}
+  - {fileID: 2839552044300696790, guid: fed6c0f815adffc4ab715f412dd8ff08, type: 3}
+  - {fileID: 2839552044300696790, guid: e9d327432d82d044d80691bc8cd19d30, type: 3}
+  - {fileID: 2839552044300696790, guid: 2f8d22888f7a7724ca1780b1044ad2ef, type: 3}
+  - {fileID: 2839552044300696790, guid: cdb15f462a481144d968659c33539027, type: 3}
+  - {fileID: 2839552044300696790, guid: 1e8faea83fc184a47a6e81cdc407240c, type: 3}
+  - {fileID: 2839552044300696790, guid: c1f05bba4138aa541b8025a1f65e1f7f, type: 3}
+  equippedTower:
+  - Lightning
+  - Leaf
+  - Roof
+  - Air
+  isTestMode: 1
+  life999: 1
