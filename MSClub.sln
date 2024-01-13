@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fabgrid", "Fabgrid.csproj", "{9177E49B-11A6-7873-529D-F09D60F1E472}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{69B357EB-98B0-4775-4A79-9B310ED2DF65}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllIn1VfxAssmebly", "AllIn1VfxAssmebly.csproj", "{3A386C81-3564-1D91-3DB5-8309E7B08A3F}"
@@ -19,6 +21,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9177E49B-11A6-7873-529D-F09D60F1E472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9177E49B-11A6-7873-529D-F09D60F1E472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9177E49B-11A6-7873-529D-F09D60F1E472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9177E49B-11A6-7873-529D-F09D60F1E472}.Release|Any CPU.Build.0 = Release|Any CPU
 		{69B357EB-98B0-4775-4A79-9B310ED2DF65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{69B357EB-98B0-4775-4A79-9B310ED2DF65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69B357EB-98B0-4775-4A79-9B310ED2DF65}.Release|Any CPU.ActiveCfg = Release|Any CPU

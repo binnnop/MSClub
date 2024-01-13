@@ -38,8 +38,8 @@ public class MonsterSpawnPortal : MonoBehaviour
         timeLine = GameObject.Find("Engine").GetComponent<TimelineController>();
         LoadAllLevelData();
         timeLine.StartTimeLine(GetMaxTotalTime());
-        lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.positionCount = pathPoints.Count;
+        //lineRenderer = GetComponent<LineRenderer>();
+        //lineRenderer.positionCount = pathPoints.Count;
 
         // Start a coroutine for each level
         for (int i = 0; i < allLevelsSpawnData.Count; i++)
@@ -89,7 +89,7 @@ public class MonsterSpawnPortal : MonoBehaviour
                 spawnPointIndex = int.Parse(values[1]),
                 spawnInterval = float.Parse(values[2]),
                 routeIndex = int.Parse(values[3]),
-                generatePreview = bool.Parse(values[4]) 
+                //generatePreview = bool.Parse(values[4]) 
             };
 
             // 将对象添加到列表中

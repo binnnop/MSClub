@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
-
 public class PreviewPath : MonoBehaviour
 {
     public Transform[] pathPoints;  // 存放路径点的数组
@@ -23,19 +21,21 @@ public class PreviewPath : MonoBehaviour
     Vector3 midPoint;
 
     public GameObject point;
+    public int pointCount;
+    public List<Vector3> extraPoints;
 
 
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.positionCount = 3; // 初始设置线段只有两个点，即起点和终点
+        pointCount = 1;
+        lineRenderer.positionCount = 2; // 初始设置线段只有两个点，即起点和终点
 
         Vector3 direction = (pathPoints[0].position);
 
 
         transform.position = direction + Vector3.up * previewHeight;
         lineRenderer.SetPosition(1, direction + Vector3.up * previewHeight);
-        lineRenderer.SetPosition(2, direction + Vector3.up * previewHeight);
         lineRenderer.SetPosition(0, direction + Vector3.up * previewHeight);
         headPosition= direction + Vector3.up * previewHeight;
         tailPosition= direction + Vector3.up * previewHeight;
@@ -48,131 +48,100 @@ public class PreviewPath : MonoBehaviour
     void Update()
     {
         MoveLine();
-        MoveObjectAlongPath();
+        //MoveObjectAlongPath();
     }
 
     void MoveLine()
     {
-
-        
-
-        if (!isMid)
+        //头部运动
+        if (!isReach)
         {
-            if (!isReach)
-            {
-                Vector3 Hdirection = (pathPoints[currentPointIndex].position + Vector3.up * previewHeight - headPosition).normalized;
-                headPosition += (Hdirection * moveSpeed * Time.deltaTime);
-            }
-           
+            Vector3 Hdirection = (pathPoints[currentPointIndex].position + Vector3.up * previewHeight - headPosition).normalized;
+            headPosition += (Hdirection * moveSpeed * Time.deltaTime);
+        }
 
-            //尾部运动
-            if (!isGo)
+
+        //尾部运动
+        if (!isGo)
+        {
+            Vector3 temp = headPosition;
+            temp.y = pathPoints[0].position.y;
+            if (Vector3.Distance(temp, pathPoints[0].position) > previewLength)
             {
-                Vector3 temp = headPosition;
-                temp.y = pathPoints[0].position.y;
-                if(Vector3.Distance(temp, pathPoints[0].position) > previewLength)
+                print("   " + temp + "    " + pathPoints[0].position);
                 isGo = true;
-                //print(previewLength + "    " + Vector3.Distance(headPosition, pathPoints[0].position));
             }
-            if (isGo)
+
+                
+        }
+        if (isGo)//出发后，要么朝点前进，要么抄最后的额外点前进
+        {
+            if (extraPoints.Count == 0)
             {
                 Vector3 Tdirection = (pathPoints[currentPointIndex].position + Vector3.up * previewHeight - tailPosition).normalized;
                 tailPosition += (Tdirection * moveSpeed * Time.deltaTime);
             }
-
-
-
-
-            float HdistanceToNextPoint = Vector3.Distance(headPosition, pathPoints[currentPointIndex].position + Vector3.up * previewHeight);
-
-
-            if (HdistanceToNextPoint <= 0.1f)
+            else
             {
-                if (currentPointIndex != pathPoints.Length - 1)
-                {
-                    currentPointIndex++;
-                    isMid = true;
-                    midPoint = headPosition;
-                }
-                else
-                {
-                    isReach = true;
-                }
+                Vector3 Tdirection = (extraPoints[0] - tailPosition).normalized;
+                tailPosition += (Tdirection * moveSpeed * Time.deltaTime);
+            }
+        }
 
+
+        //头部判断
+        float HdistanceToNextPoint = Vector3.Distance(headPosition, pathPoints[currentPointIndex].position + Vector3.up * previewHeight);
+        if (HdistanceToNextPoint <0.1f)
+        {
+            if (currentPointIndex != pathPoints.Length - 1)
+            {
+                print("added");
+                extraPoints.Add(pathPoints[currentPointIndex].position + Vector3.up * previewHeight);
+                currentPointIndex++;       
+                lineRenderer.positionCount++;
+            }
+            else
+            {
+                isReach = true;
             }
 
+        }
 
+        //尾部判断
+        if (extraPoints.Count > 0)
+        {
+            float TdistanceToNextPoint = Vector3.Distance(tailPosition, extraPoints[0]);
+            if (TdistanceToNextPoint <0.1f)
+            {
+                print("deleted");
+                extraPoints.RemoveAt(0);
+                lineRenderer.positionCount--;
+            }
+
+        }
+        else
+        {
             float TdistanceToNextPoint = Vector3.Distance(tailPosition, pathPoints[currentPointIndex].position + Vector3.up * previewHeight);
-            if (TdistanceToNextPoint <= 0.1f &&isReach)
+            if (TdistanceToNextPoint <= 0.1f && isReach)
             {
                 Destroy(gameObject);
                 return;
             }
 
-
-            lineRenderer.SetPosition(0, tailPosition);
-            lineRenderer.SetPosition(1, headPosition);
-            lineRenderer.SetPosition(2, headPosition);
-
         }
 
 
-
-        else
+        lineRenderer.SetPosition(extraPoints.Count+1, headPosition);
+        if (extraPoints.Count > 0)
         {
-            //头部运动
-            if (!isReach)
+            for (int i = 1; i <=extraPoints.Count; i++)
             {
-                Vector3 Hdirection = (pathPoints[currentPointIndex].position + Vector3.up * previewHeight - headPosition).normalized;
-                headPosition += (Hdirection * moveSpeed * Time.deltaTime);
+                lineRenderer.SetPosition(i, extraPoints[i - 1]);
             }
-            
-
-            //尾部运动
-            if (!isGo && Vector3.Distance(headPosition, pathPoints[0].position) > previewLength)
-            {
-                isGo = true;
-            }
-            if (isGo)
-            {
-                Vector3 Tdirection = (midPoint - tailPosition).normalized;
-                tailPosition += (Tdirection * moveSpeed * Time.deltaTime);
-            }
-
-
-
-
-            float HdistanceToNextPoint = Vector3.Distance(headPosition, pathPoints[currentPointIndex].position+ Vector3.up * previewHeight);
-
-            if (HdistanceToNextPoint <= 0.1f)
-            {
-                if (currentPointIndex != pathPoints.Length - 1)
-                {
-                    currentPointIndex++;
-                    isMid = true;
-                    midPoint = headPosition;
-                }
-                else {
-                    isReach = true;
-                }
-                
-            }
-
-            float TdistanceToNextPoint = Vector3.Distance(tailPosition, midPoint);
-            if (TdistanceToNextPoint <= 0.1f )
-            {
-                isMid = false;
-            }
-
-
-            lineRenderer.SetPosition(0, tailPosition);
-            lineRenderer.SetPosition(1, midPoint);
-            lineRenderer.SetPosition(2, headPosition);
-
-
-        }
-
         
+        }
+        lineRenderer.SetPosition(0, tailPosition);
+
     }
     public void MoveObjectAlongPath()
     {

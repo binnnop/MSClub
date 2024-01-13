@@ -1,10 +1,10 @@
 Using pre-set license
 Built from 'HEAD' branch; Version is '2021.3.16f1c1 (56dbfdd6697f) revision 5692413'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit CoreCountrySpecific' Language: 'zh' Physical Memory: 16250 MB
+OS: 'Windows 11  (10.0.22621) 64bit CoreCountrySpecific' Language: 'zh' Physical Memory: 32448 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-D:\Program Files\2021.3.16f1c1\Editor\Unity.exe
+D:\UnityEditor\2021.3.16f1c1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
@@ -15,7 +15,7 @@ D:/MSClub
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-11934
+4699
 Successfully changed project path to: D:/MSClub
 D:/MSClub
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,118 +47,115 @@ D:/MSClub
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [42412] Host "[IP] 192.168.2.20 [Port] 0 [Flags] 2 [Guid] 467692162 [EditorId] 467692162 [Version] 1048832 [Id] WindowsEditor(7,YAWNXIA-NB1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [21320] Host "[IP] 192.168.2.30 [Port] 0 [Flags] 2 [Guid] 3118467831 [EditorId] 3118467831 [Version] 1048832 [Id] WindowsEditor(7,MS02) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [42412] Host "[IP] 192.168.2.20 [Port] 0 [Flags] 2 [Guid] 467692162 [EditorId] 467692162 [Version] 1048832 [Id] WindowsEditor(7,YAWNXIA-NB1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [21320] Host "[IP] 192.168.2.30 [Port] 0 [Flags] 2 [Guid] 3118467831 [EditorId] 3118467831 [Version] 1048832 [Id] WindowsEditor(7,MS02) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 AS: AutoStreaming module initializing.
-Refreshing native plugins compatible for Editor in 549.51 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 186.79 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.16f1c1 (56dbfdd6697f)
-[Subsystems] Discovering subsystems at path D:/Program Files/2021.3.16f1c1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/UnityEditor/2021.3.16f1c1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path D:/MSClub/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f15)
+    Renderer: NVIDIA GeForce RTX 4060 Laptop GPU (ID=0x28e0)
     Vendor:   NVIDIA
-    VRAM:     5968 MB
-    Driver:   31.0.15.3598
+    VRAM:     7971 MB
+    Driver:   31.0.15.3152
 Shader 'Custom/CloudShader': fallback shader 'Particles/VertexLit' not found
 Initialize mono
-Mono path[0] = 'D:/Program Files/2021.3.16f1c1/Editor/Data/Managed'
-Mono path[1] = 'D:/Program Files/2021.3.16f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'D:/Program Files/2021.3.16f1c1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56580
+Mono path[0] = 'D:/UnityEditor/2021.3.16f1c1/Editor/Data/Managed'
+Mono path[1] = 'D:/UnityEditor/2021.3.16f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/UnityEditor/2021.3.16f1c1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56328
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/Program Files/2021.3.16f1c1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: D:/Program Files/2021.3.16f1c1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Register platform support module: D:/Program Files/2021.3.16f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.019393 seconds.
+Register platform support module: D:/UnityEditor/2021.3.16f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: D:/UnityEditor/2021.3.16f1c1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+Registered in 0.002944 seconds.
+Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 575.46 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 187.36 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.128 seconds
+- Completed reload, in  0.554 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2129ms)
-		BeginReloadAssembly (316ms)
+	ReloadAssembly (555ms)
+		BeginReloadAssembly (61ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (1478ms)
-			LoadAssemblies (293ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (418ms)
+			LoadAssemblies (57ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (244ms)
+			SetupTypeCache (63ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (50ms)
-			SetupLoadedEditorAssemblies (1019ms)
+			RebuildScriptCaches (18ms)
+			SetupLoadedEditorAssemblies (293ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (114ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (576ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (204ms)
-				ProcessInitializeOnLoadMethodAttributes (123ms)
+				RefreshPlugins (187ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (71ms)
+				ProcessInitializeOnLoadMethodAttributes (28ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.077197 seconds.
+Registered in 0.012859 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\MSClub\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\MSClub\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 732.12 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 217.16 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.823 seconds
+- Completed reload, in  1.307 seconds
 Domain Reload Profiling:
-	ReloadAssembly (5825ms)
-		BeginReloadAssembly (583ms)
+	ReloadAssembly (1308ms)
+		BeginReloadAssembly (87ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (16ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (153ms)
-		EndReloadAssembly (4816ms)
-			LoadAssemblies (519ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (1141ms)
+			LoadAssemblies (80ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (823ms)
+			SetupTypeCache (189ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (132ms)
-			SetupLoadedEditorAssemblies (3300ms)
+			RebuildScriptCaches (43ms)
+			SetupLoadedEditorAssemblies (795ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (34ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (732ms)
-				BeforeProcessingInitializeOnLoad (334ms)
-				ProcessInitializeOnLoadAttributes (1986ms)
-				ProcessInitializeOnLoadMethodAttributes (144ms)
-				AfterProcessingInitializeOnLoad (69ms)
+				RefreshPlugins (217ms)
+				BeforeProcessingInitializeOnLoad (85ms)
+				ProcessInitializeOnLoadAttributes (424ms)
+				ProcessInitializeOnLoadMethodAttributes (57ms)
+				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (38ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Custom/CloudShader': fallback shader 'Particles/VertexLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.22 seconds
-Refreshing native plugins compatible for Editor in 6.90 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 3.10 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5850 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 48 unused Assets / (2.2 MB). Loaded Objects now: 6329.
-Memory consumption went from 303.5 MB to 301.3 MB.
-Total: 8.982900 ms (FindLiveObjects: 0.757800 ms CreateObjectMapping: 0.838200 ms MarkObjects: 6.232800 ms  DeleteObjects: 1.152000 ms)
+Unloading 5855 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 49 unused Assets / (2.2 MB). Loaded Objects now: 6304.
+Memory consumption went from 290.9 MB to 288.6 MB.
+Total: 3.491600 ms (FindLiveObjects: 0.406100 ms CreateObjectMapping: 0.085600 ms MarkObjects: 2.477500 ms  DeleteObjects: 0.521400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -174,51 +171,50 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.051440 seconds.
+Registered in 0.015373 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\MSClub\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\MSClub\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 4.88 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.78 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.805 seconds
+- Completed reload, in  1.065 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3806ms)
-		BeginReloadAssembly (399ms)
+	ReloadAssembly (1065ms)
+		BeginReloadAssembly (135ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (71ms)
-		EndReloadAssembly (3121ms)
-			LoadAssemblies (373ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (857ms)
+			LoadAssemblies (100ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (658ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (82ms)
-			SetupLoadedEditorAssemblies (1916ms)
+			SetupTypeCache (199ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (499ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (45ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (5ms)
-				BeforeProcessingInitializeOnLoad (206ms)
-				ProcessInitializeOnLoadAttributes (1473ms)
-				ProcessInitializeOnLoadMethodAttributes (127ms)
-				AfterProcessingInitializeOnLoad (58ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (4ms)
+				BeforeProcessingInitializeOnLoad (61ms)
+				ProcessInitializeOnLoadAttributes (357ms)
+				ProcessInitializeOnLoadMethodAttributes (56ms)
+				AfterProcessingInitializeOnLoad (10ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (33ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 Shader 'Custom/CloudShader': fallback shader 'Particles/VertexLit' not found
-Refreshing native plugins compatible for Editor in 11.94 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 6.50 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5667 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 41 unused Assets / (2.2 MB). Loaded Objects now: 6332.
-Memory consumption went from 293.2 MB to 291.0 MB.
-Total: 6.543500 ms (FindLiveObjects: 0.587000 ms CreateObjectMapping: 0.551000 ms MarkObjects: 4.565200 ms  DeleteObjects: 0.839100 ms)
+Unloading 5738 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (4.2 MB). Loaded Objects now: 6369.
+Memory consumption went from 284.7 MB to 280.4 MB.
+Total: 4.595900 ms (FindLiveObjects: 0.481800 ms CreateObjectMapping: 0.240200 ms MarkObjects: 2.802900 ms  DeleteObjects: 1.069100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -234,171 +230,50 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.056744 seconds.
+Registered in 0.013478 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\MSClub\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\MSClub\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 5.19 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.65 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.891 seconds
+- Completed reload, in  0.981 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3892ms)
-		BeginReloadAssembly (427ms)
+	ReloadAssembly (982ms)
+		BeginReloadAssembly (124ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
+			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (70ms)
-		EndReloadAssembly (3105ms)
-			LoadAssemblies (400ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (781ms)
+			LoadAssemblies (97ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (699ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (91ms)
-			SetupLoadedEditorAssemblies (1834ms)
+			SetupTypeCache (181ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (452ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (45ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (5ms)
-				BeforeProcessingInitializeOnLoad (226ms)
-				ProcessInitializeOnLoadAttributes (1362ms)
-				ProcessInitializeOnLoadMethodAttributes (126ms)
-				AfterProcessingInitializeOnLoad (69ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (4ms)
+				BeforeProcessingInitializeOnLoad (56ms)
+				ProcessInitializeOnLoadAttributes (326ms)
+				ProcessInitializeOnLoadMethodAttributes (48ms)
+				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (38ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 Shader 'Custom/CloudShader': fallback shader 'Particles/VertexLit' not found
-Refreshing native plugins compatible for Editor in 12.50 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 5.93 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5667 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 41 unused Assets / (2.2 MB). Loaded Objects now: 6335.
-Memory consumption went from 293.2 MB to 291.0 MB.
-Total: 7.132700 ms (FindLiveObjects: 0.640200 ms CreateObjectMapping: 0.591300 ms MarkObjects: 4.974300 ms  DeleteObjects: 0.925100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.057085 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\MSClub\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\MSClub\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 5.67 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.114 seconds
-Domain Reload Profiling:
-	ReloadAssembly (4116ms)
-		BeginReloadAssembly (414ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (68ms)
-		EndReloadAssembly (3386ms)
-			LoadAssemblies (397ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (669ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (106ms)
-			SetupLoadedEditorAssemblies (2102ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (50ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (6ms)
-				BeforeProcessingInitializeOnLoad (283ms)
-				ProcessInitializeOnLoadAttributes (1557ms)
-				ProcessInitializeOnLoadMethodAttributes (142ms)
-				AfterProcessingInitializeOnLoad (63ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (40ms)
-Platform modules already initialized, skipping
-Shader 'Custom/CloudShader': fallback shader 'Particles/VertexLit' not found
-Refreshing native plugins compatible for Editor in 11.22 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5667 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 41 unused Assets / (2.2 MB). Loaded Objects now: 6338.
-Memory consumption went from 293.2 MB to 291.0 MB.
-Total: 6.525800 ms (FindLiveObjects: 0.578800 ms CreateObjectMapping: 0.783000 ms MarkObjects: 4.345600 ms  DeleteObjects: 0.816000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.061106 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\MSClub\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\MSClub\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 5.31 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.997 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3999ms)
-		BeginReloadAssembly (417ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (71ms)
-		EndReloadAssembly (3275ms)
-			LoadAssemblies (386ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (683ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (93ms)
-			SetupLoadedEditorAssemblies (1996ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (49ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (6ms)
-				BeforeProcessingInitializeOnLoad (224ms)
-				ProcessInitializeOnLoadAttributes (1485ms)
-				ProcessInitializeOnLoadMethodAttributes (155ms)
-				AfterProcessingInitializeOnLoad (76ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (44ms)
-Platform modules already initialized, skipping
-Shader 'Custom/CloudShader': fallback shader 'Particles/VertexLit' not found
-Refreshing native plugins compatible for Editor in 12.71 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5667 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 41 unused Assets / (2.2 MB). Loaded Objects now: 6341.
-Memory consumption went from 293.2 MB to 291.0 MB.
-Total: 7.576700 ms (FindLiveObjects: 0.653800 ms CreateObjectMapping: 0.559800 ms MarkObjects: 5.361200 ms  DeleteObjects: 1.000200 ms)
+Unloading 5738 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (4.2 MB). Loaded Objects now: 6372.
+Memory consumption went from 284.7 MB to 280.4 MB.
+Total: 4.917800 ms (FindLiveObjects: 0.412800 ms CreateObjectMapping: 0.183500 ms MarkObjects: 3.044900 ms  DeleteObjects: 1.275800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -413,298 +288,28 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 38131.055080 seconds.
-  path: Assets/Extra/A/PolygonNightclubs/Models/Materials/lambert1.mat
-  artifactKey: Guid(70c74d9b1d57e8f42adfdf9c464e4318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonNightclubs/Models/Materials/lambert1.mat using Guid(70c74d9b1d57e8f42adfdf9c464e4318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fbd9794a955d967e386b369af3cf00d') in 0.253849 seconds 
+  Time since last request: 86638.348544 seconds.
+  path: Assets/Extra/Fabgrid
+  artifactKey: Guid(00c68ef661fde18449732fd345cbbb39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Extra/Fabgrid using Guid(00c68ef661fde18449732fd345cbbb39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6128c2e8507ed402beb607ac2924b2a') in 0.009737 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.156160 seconds.
-  path: Assets/Extra/A/PolygonNightclubs/Models/SM_Lightray_Cube_01.fbx
-  artifactKey: Guid(70300e8a5fe3f1b48b15fc230ce6e5b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonNightclubs/Models/SM_Lightray_Cube_01.fbx using Guid(70300e8a5fe3f1b48b15fc230ce6e5b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b8dd658d0c805fb44fd9759bafa4603') in 0.268651 seconds 
+  Time since last request: 13.779643 seconds.
+  path: Assets/Extra/Fabgrid/Demo/Prefabs/FloorPanel1x1.prefab
+  artifactKey: Guid(8cdeb2c78b3834942b1d820ad9f668dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Extra/Fabgrid/Demo/Prefabs/FloorPanel1x1.prefab using Guid(8cdeb2c78b3834942b1d820ad9f668dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd102e968b9daeee8297a24e5d86b7d3a') in 0.267525 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000051 seconds.
-  path: Assets/Extra/A/PolygonNightclubs/Materials/Walls_Floors/LED_Panel_03.mat
-  artifactKey: Guid(d5af3ee9360651145a441972763d63c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonNightclubs/Materials/Walls_Floors/LED_Panel_03.mat using Guid(d5af3ee9360651145a441972763d63c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a2c9f7b66c02bf9ae92f403497cc6b7') in 0.521439 seconds 
+  Time since last request: 0.113050 seconds.
+  path: Assets/Extra/Fabgrid/Demo/Prefabs/PressurePad.prefab
+  artifactKey: Guid(8d893d25d61cbf44dbd977447781e687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Extra/Fabgrid/Demo/Prefabs/PressurePad.prefab using Guid(8d893d25d61cbf44dbd977447781e687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1bcc6986fb4f99ce0fbd5713a04e119') in 0.024973 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/ImpactRing2.mat
-  artifactKey: Guid(480f66df83611604d960dcd73235dc76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/ImpactRing2.mat using Guid(480f66df83611604d960dcd73235dc76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '197ee786f4cbf67262392ff717734038') in 0.042020 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Extra/FreeVoxelGirl/Models/Materials/KadukiSailorSuit.mat
-  artifactKey: Guid(668913a9385e1104d90442f9e9f95eed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/FreeVoxelGirl/Models/Materials/KadukiSailorSuit.mat using Guid(668913a9385e1104d90442f9e9f95eed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a3ab437b5df79a3b3066724decb238c') in 0.026838 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Extra/A/PolygonNightclubs/Materials/Walls_Floors/LED_Panel_01.mat
-  artifactKey: Guid(eb125de84d3a8b448aecb882ec89c9aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonNightclubs/Materials/Walls_Floors/LED_Panel_01.mat using Guid(eb125de84d3a8b448aecb882ec89c9aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e353cfe132cc03c8e775a835e951514f') in 0.036979 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Extra/A/PolygonSciFiCity/Models/Collision/Materials/lambert1243.mat
-  artifactKey: Guid(f8a617d51f96313448f41868da7b48fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonSciFiCity/Models/Collision/Materials/lambert1243.mat using Guid(f8a617d51f96313448f41868da7b48fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f4132a4fce00a4ae9b4c67a5a9ec435') in 0.026576 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Extra/Voxel Character Pack/Characters/Character Resources/Character04/Materials/Head.mat
-  artifactKey: Guid(5933585d86bcc314b87d23bbb4aa0ae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/Voxel Character Pack/Characters/Character Resources/Character04/Materials/Head.mat using Guid(5933585d86bcc314b87d23bbb4aa0ae3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcbefe2212271eeb93949aa852846ca6') in 0.028661 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000062 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/IceShotTrail.mat
-  artifactKey: Guid(f4e6a0fcd149384448fc737110aa6d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/IceShotTrail.mat using Guid(f4e6a0fcd149384448fc737110aa6d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3d14b360a50ac208a93b771bd2073d1') in 0.177855 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Fx/unity模型Teleport Effect 1.0-Portal Particle/Materials/Glow_4.mat
-  artifactKey: Guid(5efca72aa9faf5a4baa9722bc5d62b6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/unity模型Teleport Effect 1.0-Portal Particle/Materials/Glow_4.mat using Guid(5efca72aa9faf5a4baa9722bc5d62b6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4468f9261e7b782d24e721d5d588bd13') in 0.023041 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000056 seconds.
-  path: Assets/Fx/unity模型Teleport Effect 1.0-Portal Particle/Materials/Glow_9.mat
-  artifactKey: Guid(7ff2b4dde4299804683654d9209422fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/unity模型Teleport Effect 1.0-Portal Particle/Materials/Glow_9.mat using Guid(7ff2b4dde4299804683654d9209422fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '854e1302a2b9d4ae1b3857b0cb80c4ee') in 0.027356 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000051 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/GhostSphere.mat
-  artifactKey: Guid(1a6ab14637f7d374ca8f67d45d2a5817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/GhostSphere.mat using Guid(1a6ab14637f7d374ca8f67d45d2a5817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a60d445e26f73891295bf911b09487b') in 0.163132 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/ImpactRingRed.mat
-  artifactKey: Guid(0d792532a3c70f847bf9893ec8ec21e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/ImpactRingRed.mat using Guid(0d792532a3c70f847bf9893ec8ec21e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52545c7d522c4adee0322c36629666eb') in 0.041763 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/GhostSmoke.mat
-  artifactKey: Guid(a4a9dc01dc6bf3045959c43b34b432ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/GhostSmoke.mat using Guid(a4a9dc01dc6bf3045959c43b34b432ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '254b7bbfac980d26c7e7ed01229950ea') in 0.033069 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/ImpactSmoke2.mat
-  artifactKey: Guid(58236a436e483f141a1dcdf9797592f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/ImpactSmoke2.mat using Guid(58236a436e483f141a1dcdf9797592f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fbfc800e064d8f7079c84dddb4b9fce') in 0.039012 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Extra/A/PolygonSciFiSpace/Models/Collision/Materials/lambert3.mat
-  artifactKey: Guid(a6330ea5161fcb243a7ccc7328fcf853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonSciFiSpace/Models/Collision/Materials/lambert3.mat using Guid(a6330ea5161fcb243a7ccc7328fcf853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '351107e0f9c1b4a54e5d3658f5398aa0') in 0.027564 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Extra/Voxel Character Pack/Characters/Character Resources/Character01/Materials/Head.mat
-  artifactKey: Guid(b9618976fda0d8f46972a0f69ada540e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/Voxel Character Pack/Characters/Character Resources/Character01/Materials/Head.mat using Guid(b9618976fda0d8f46972a0f69ada540e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb8ba1028dc3f91aa18e071f87fd290b') in 0.041173 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/IceShotTrailDark.mat
-  artifactKey: Guid(8deaae666b9c3c6408e4a5c36f0a4204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/IceShotTrailDark.mat using Guid(8deaae666b9c3c6408e4a5c36f0a4204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fa1edcf93b841d0351ecdb0801f9529') in 0.131939 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000064 seconds.
-  path: Assets/Fx/Small Fire Pack/Materials/Glow 2.mat
-  artifactKey: Guid(360747864f99fdc4884205c4d4d28b76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/Small Fire Pack/Materials/Glow 2.mat using Guid(360747864f99fdc4884205c4d4d28b76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a85978838fc66f7e2d22cacc76604bbf') in 0.026091 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000065 seconds.
-  path: Assets/Extra/A/PolygonSciFiWorlds/Materials/FX/FX_Empty.mat
-  artifactKey: Guid(4a510922e9567b74dab4331253bde1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonSciFiWorlds/Materials/FX/FX_Empty.mat using Guid(4a510922e9567b74dab4331253bde1e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f32b3350cfa081753bb084df7fcfba3') in 0.020826 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000051 seconds.
-  path: Assets/Extra/A/PolygonSciFiSpace/Materials/FX_Materials/FX_Explosion.mat
-  artifactKey: Guid(c44d9100c3587264ead98493219f1fa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonSciFiSpace/Materials/FX_Materials/FX_Explosion.mat using Guid(c44d9100c3587264ead98493219f1fa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '447e90cc23dda555afe904b7f9a9f5c5') in 0.033205 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Extra/A/PolygonSciFiWorlds/Materials/FX/FX_Hologram_Sign_Mat.mat
-  artifactKey: Guid(8431fcffbb1d5714baa450498f2c1384) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonSciFiWorlds/Materials/FX/FX_Hologram_Sign_Mat.mat using Guid(8431fcffbb1d5714baa450498f2c1384) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2d7b10dbc5c0da3d9a1ca4fdbd86470') in 0.476672 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Fx/unity模型Teleport Effect 1.0-Portal Particle/Materials/Background.mat
-  artifactKey: Guid(1fe98a807a60c02428d54184b7df6316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/unity模型Teleport Effect 1.0-Portal Particle/Materials/Background.mat using Guid(1fe98a807a60c02428d54184b7df6316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce36e23410917c9ffe539aec87e4911b') in 0.027480 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Extra/A/PolygonNightclubs/Materials/Base_Materials/Glass_01.mat
-  artifactKey: Guid(30e187260b65c9c43af5336e26dfffb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonNightclubs/Materials/Base_Materials/Glass_01.mat using Guid(30e187260b65c9c43af5336e26dfffb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5d8c363fa163301eb1653f14f741c64') in 0.024051 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/ImpactCenterFlare.mat
-  artifactKey: Guid(2482957e538f7bf459f48e31ed7d4b0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/ImpactCenterFlare.mat using Guid(2482957e538f7bf459f48e31ed7d4b0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6b695382e533f09ad51d350a351aba2') in 0.053410 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Extra/A/PolygonSciFiWorlds/Materials/Misc/Glass_01.mat
-  artifactKey: Guid(7864cb843e5e15946ba690fdbe6bd0a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonSciFiWorlds/Materials/Misc/Glass_01.mat using Guid(7864cb843e5e15946ba690fdbe6bd0a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cadf632943ecda3a428975588c005f53') in 0.131381 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Fx/Small Fire Pack/URP/Materials/Glow 3_URP.mat
-  artifactKey: Guid(980cb0d603c71214ab33acda393d01da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/Small Fire Pack/URP/Materials/Glow 3_URP.mat using Guid(980cb0d603c71214ab33acda393d01da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80d3362d456934eeb79d51480b600d98') in 0.038956 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000073 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/ImpactRingBlue.mat
-  artifactKey: Guid(d0f0f3600215b4c41aab27f53da6d72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/ImpactRingBlue.mat using Guid(d0f0f3600215b4c41aab27f53da6d72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d683d7740d6b7eac3edcb4716099b86') in 0.035681 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/GalaxySmokeTop.mat
-  artifactKey: Guid(b43be7d0fa5a17146929e6921937030c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/GalaxySmokeTop.mat using Guid(b43be7d0fa5a17146929e6921937030c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31f0f0f2eddd8d55a218d96983f402c3') in 0.136245 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Extra/A/PolygonSciFiCity/Materials/Misc/FX_Mat_Blank.mat
-  artifactKey: Guid(28a61d89cc047e04095d124cb957aabb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonSciFiCity/Materials/Misc/FX_Mat_Blank.mat using Guid(28a61d89cc047e04095d124cb957aabb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d047fab2c36b96384aaa6ba0b7f01c3') in 0.024292 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Extra/A/polyperfect/Low Poly Ultimate Pack/- Materials/Colors/1 SKIN-DARKEST-LPUP.mat
-  artifactKey: Guid(7e05ef7409d694c74a16dec33c316bd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/polyperfect/Low Poly Ultimate Pack/- Materials/Colors/1 SKIN-DARKEST-LPUP.mat using Guid(7e05ef7409d694c74a16dec33c316bd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f0193898bd494714e7c759a9038c3df') in 0.026854 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000062 seconds.
-  path: Assets/Fx/Small Fire Pack/Materials/Glow.mat
-  artifactKey: Guid(7906c1783890ecf4dbb4d1202390be2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/Small Fire Pack/Materials/Glow.mat using Guid(7906c1783890ecf4dbb4d1202390be2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15423204d3a847e3d8ec2e8baadbc566') in 0.031106 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Extra/A/PolygonSciFiWorlds/Prefabs/FX/Models/Materials/lambert3.mat
-  artifactKey: Guid(0c35e50008cc2d7409951c1d84b8e4af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonSciFiWorlds/Prefabs/FX/Models/Materials/lambert3.mat using Guid(0c35e50008cc2d7409951c1d84b8e4af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9e8225ee56dd79b662e358c453a38ab') in 0.025888 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Samples/Universal RP/12.1.8/URP Package Samples/Shaders/Lit/Materials/HeightMapOn.mat
-  artifactKey: Guid(db2f9e1b0d51c4244972d007409c5d1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/Universal RP/12.1.8/URP Package Samples/Shaders/Lit/Materials/HeightMapOn.mat using Guid(db2f9e1b0d51c4244972d007409c5d1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12d2533291b3244619fb3c2f92d1d2d1') in 0.054769 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Extra/A/PolygonSciFiWorlds/Prefabs/FX/Models/Materials/Gradient_Boost.mat
-  artifactKey: Guid(555db060694bcc247a6686e38612641e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonSciFiWorlds/Prefabs/FX/Models/Materials/Gradient_Boost.mat using Guid(555db060694bcc247a6686e38612641e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42131ca5036c7c8e36aaee43288ac277') in 0.024253 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/GreenFire.mat
-  artifactKey: Guid(6ce84840c8f959044a9eff46d767c809) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/GreenFire.mat using Guid(6ce84840c8f959044a9eff46d767c809) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7e40f86762142278fc7d2573d8053df') in 0.054198 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/GalaxyStars.mat
-  artifactKey: Guid(76b1cd22480cfbf479bfe784e528b484) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/GalaxyStars.mat using Guid(76b1cd22480cfbf479bfe784e528b484) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '948ecbc067cbcc9fc3342763950c6d1f') in 0.041448 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Fx/Small Fire Pack/Materials/Glow 3.mat
-  artifactKey: Guid(6bbae6cbdd98c8544b3af5183b0adf36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/Small Fire Pack/Materials/Glow 3.mat using Guid(6bbae6cbdd98c8544b3af5183b0adf36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfa5f000a5803d73168217e540ab82e3') in 0.034687 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Extra/A/PolygonSciFiSpace/Materials/FX_Materials/FX_Lines.mat
-  artifactKey: Guid(63f38db8627ddfb42af7923396f6b3b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonSciFiSpace/Materials/FX_Materials/FX_Lines.mat using Guid(63f38db8627ddfb42af7923396f6b3b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1c3d7b6d105e9640b9072c04158f62f') in 0.029983 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Extra/A/PolygonNightclubs/Materials/Walls_Floors/LED_Panel_04.mat
-  artifactKey: Guid(db268528b2bf0e441a52c8b5c80fc6f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonNightclubs/Materials/Walls_Floors/LED_Panel_04.mat using Guid(db268528b2bf0e441a52c8b5c80fc6f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '281ebdaefae74593f612e8952b8d9f5b') in 0.046430 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000055 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/HollySphere.mat
-  artifactKey: Guid(dfdd0c3294e3ae34a921af7370bdf7d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/HollySphere.mat using Guid(dfdd0c3294e3ae34a921af7370bdf7d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f24842a2396c2e29fc2680aec7fbd8ae') in 0.042275 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000062 seconds.
-  path: Assets/Extra/Voxel Character Pack/Characters/Character Resources/Character02/Materials/Head.mat
-  artifactKey: Guid(b889714c24a4f1b4892cf4702627f3dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/Voxel Character Pack/Characters/Character Resources/Character02/Materials/Head.mat using Guid(b889714c24a4f1b4892cf4702627f3dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '888ab2dce9b6b98f0854ce4ac3e1350e') in 0.032085 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/GunImpactBigSparks.mat
-  artifactKey: Guid(5132952a433c48042895518847d8e501) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/GunImpactBigSparks.mat using Guid(5132952a433c48042895518847d8e501) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3cda8310c434fdd33252b65abb43a34') in 0.046170 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Fx/unity模型Teleport Effect 1.0-Portal Particle/Materials/Glow_10.mat
-  artifactKey: Guid(b9a1b65604adb4a458f4cdd51d23ae90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/unity模型Teleport Effect 1.0-Portal Particle/Materials/Glow_10.mat using Guid(b9a1b65604adb4a458f4cdd51d23ae90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99491e9d143ca15878c0cb7893138fca') in 0.026229 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Extra/A/PolygonSciFiSpace/Models/Collision/Materials/lambert1.mat
-  artifactKey: Guid(147080267feb7bf468c9f4bbcf9f4c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonSciFiSpace/Models/Collision/Materials/lambert1.mat using Guid(147080267feb7bf468c9f4bbcf9f4c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edf44341ed3efc20c3932b50fd56e313') in 0.025732 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/ImpactShapeBright.mat
-  artifactKey: Guid(eabee3393cb53fd43bf9055f208861c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/AllIn1VfxToolkit/Demo & Assets/Demo/Materials/ImpactShapeBright.mat using Guid(eabee3393cb53fd43bf9055f208861c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33d42c3035fdb5debde6f402ac50caf6') in 0.034706 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Fx/unity模型Teleport Effect 1.0-Portal Particle/Materials/Glow_6.mat
-  artifactKey: Guid(7613a1f6939c9f4428761a2047b742a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fx/unity模型Teleport Effect 1.0-Portal Particle/Materials/Glow_6.mat using Guid(7613a1f6939c9f4428761a2047b742a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8226e053ce15de5ef7bfd59623055367') in 0.025715 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Extra/A/PolygonNightclubs/Materials/Walls_Floors/LED_Panel_05.mat
-  artifactKey: Guid(96e36d805bde35c4d88fd667da0e4462) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonNightclubs/Materials/Walls_Floors/LED_Panel_05.mat using Guid(96e36d805bde35c4d88fd667da0e4462) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '069b793474a50d2e7f0c91d075cd42b2') in 0.033235 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Extra/A/PolygonNightclubs/Models/SM_Lightray_Round_01.fbx
-  artifactKey: Guid(a0d8dbf49a0d0cf408810dc8c79b494a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extra/A/PolygonNightclubs/Models/SM_Lightray_Round_01.fbx using Guid(a0d8dbf49a0d0cf408810dc8c79b494a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eca66e9fe3712ebf8f2f7e49084d77b8') in 0.048075 seconds 
+  Time since last request: 0.000023 seconds.
+  path: Assets/Extra/Fabgrid/Demo/Prefabs/SwitchStanding.prefab
+  artifactKey: Guid(3d1a3a0f57664a84b92b995ef69d3abc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Extra/Fabgrid/Demo/Prefabs/SwitchStanding.prefab using Guid(3d1a3a0f57664a84b92b995ef69d3abc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '231e2d3c1702b178e2bc22e97aa0174d') in 0.174580 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting
