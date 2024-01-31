@@ -110,6 +110,7 @@ MonoBehaviour:
   HitPoint: 0
   scripts: {fileID: 0}
   route: {fileID: 0}
+  deadAnimScale: 1
   healthCanvas: {fileID: 9069617954673506382}
   healthText: {fileID: 0}
   healthBarFill: {fileID: 9069617956328602594}
@@ -121,6 +122,7 @@ MonoBehaviour:
   isPlayingFlyingEnd: 0
   isStatic: 0
   isCompleteBorn: 0
+  fallOut: 0
   holdingBaby: {fileID: 0}
 --- !u!1 &7273971457543213155
 GameObject:

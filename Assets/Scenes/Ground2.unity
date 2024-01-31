@@ -168,7 +168,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh97044
+  m_Name: pb_Mesh184258
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43777,6 +43777,9 @@ MonoBehaviour:
   levelDataFileNames:
   - demo3.csv
   - demo3_1.csv
+  pathPoints: []
+  speed: 5
+  pathIndex: 0
 --- !u!4 &836670506
 Transform:
   m_ObjectHideFlags: 0
@@ -45292,10 +45295,18 @@ MonoBehaviour:
   core: {fileID: 1277650221}
   nowLook: {x: 0, y: 0, z: 0}
   rotationSpeed: 360
+  panSpeed: 5
+  mouseBuff: 0
   distance: 5
   zoomSpeed: 300
+  rotationSmoothTime: 0.2
+  zoomSmoothTime: 0.2
+  panSmoothTime: 0.2
   minZoomDistance: 5
   maxZoomDistance: 20
+  maxPanDistance: 10
+  zoomSmallFloat: 0
+  isDrag: 0
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58639,7 +58650,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-89656
+  m_Name: pb_Mesh-41756
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -65364,6 +65375,10 @@ PrefabInstance:
     - target: {fileID: 2081873651503153701, guid: 5ad38a690dff53e4cb571426d2f8b0e3, type: 3}
       propertyPath: m_Name
       value: test
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759051751249351767, guid: 5ad38a690dff53e4cb571426d2f8b0e3, type: 3}
+      propertyPath: isTestMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad38a690dff53e4cb571426d2f8b0e3, type: 3}

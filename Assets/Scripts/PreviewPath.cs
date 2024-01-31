@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PreviewPath : MonoBehaviour
 {
-    public Transform[] pathPoints;  // 存放路径点的数组
+    public List<Transform> pathPoints;  // 存放路径点的数组
     public float moveSpeed = 5f;    // 移动速度
     public float previewHeight = 1f; // 光线预览的高度
     public float previewLength = 5f; // 光线预览的长度
@@ -40,9 +40,6 @@ public class PreviewPath : MonoBehaviour
         headPosition= direction + Vector3.up * previewHeight;
         tailPosition= direction + Vector3.up * previewHeight;
 
-        point.transform.position = direction;
-
-
     }
 
     void Update()
@@ -68,7 +65,7 @@ public class PreviewPath : MonoBehaviour
             temp.y = pathPoints[0].position.y;
             if (Vector3.Distance(temp, pathPoints[0].position) > previewLength)
             {
-                print("   " + temp + "    " + pathPoints[0].position);
+                //print("   " + temp + "    " + pathPoints[0].position);
                 isGo = true;
             }
 
@@ -93,9 +90,9 @@ public class PreviewPath : MonoBehaviour
         float HdistanceToNextPoint = Vector3.Distance(headPosition, pathPoints[currentPointIndex].position + Vector3.up * previewHeight);
         if (HdistanceToNextPoint <0.1f)
         {
-            if (currentPointIndex != pathPoints.Length - 1)
+            if (currentPointIndex != pathPoints.Count - 1)
             {
-                print("added");
+                //print("added");
                 extraPoints.Add(pathPoints[currentPointIndex].position + Vector3.up * previewHeight);
                 currentPointIndex++;       
                 lineRenderer.positionCount++;
@@ -113,7 +110,7 @@ public class PreviewPath : MonoBehaviour
             float TdistanceToNextPoint = Vector3.Distance(tailPosition, extraPoints[0]);
             if (TdistanceToNextPoint <0.1f)
             {
-                print("deleted");
+                //print("deleted");
                 extraPoints.RemoveAt(0);
                 lineRenderer.positionCount--;
             }

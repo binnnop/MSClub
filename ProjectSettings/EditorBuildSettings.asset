@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/BattleMap.unity
+    guid: f385bcec7bae83d459e13c9461c80702
+  - enabled: 1
     path: Assets/Scenes/Basement.unity
     guid: ef10edcc317e5df449186a88429501c2
   - enabled: 1
@@ -26,4 +29,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main5.unity
     guid: db81cdc9bee40894fa8d86c9c8997fb5
+  - enabled: 1
+    path: Assets/Scenes/temp-1.unity
+    guid: 6c3852a0794e8d64b9581ad69e1269a1
+  - enabled: 1
+    path: Assets/Scenes/temp.unity
+    guid: aa13bbc4a829044419b3662d73e0aa39
+  - enabled: 1
+    path: Assets/Scenes/temp2.6.unity
+    guid: 82af3e8a5ac28ef4bb2b38c371b8c912
+  - enabled: 1
+    path: Assets/Scenes/temp3.unity
+    guid: 7023ff2ecbadce44eb3527c97c70a917
+  - enabled: 1
+    path: Assets/Scenes/temp4.unity
+    guid: 80e5e0707241e544786d6b053df40aff
+  - enabled: 1
+    path: Assets/Scenes/temp5.unity
+    guid: b83e0842bd1d87a459a00870ab6da915
+  - enabled: 1
+    path: Assets/Scenes/temp6.unity
+    guid: 7641d38ebcfa8c2499705c603cb66be1
+  - enabled: 1
+    path: Assets/Scenes/temp7.unity
+    guid: d3eee892f95bad04f824d87d98d1977b
   m_configObjects: {}

@@ -19,11 +19,13 @@ public class shovel : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IE
     CardManager cardManager;
     public RectTransform rectTransform;
     public Vector2 initialPosition;  // ±£¥Ê≥ı ºŒª÷√
+    private cameraRotation cameraMove;
     void Start()
     {
         
         cardManager = GameObject.Find("Engine").GetComponent<CardManager>();
         rectTransform = GetComponent<RectTransform>();
+        cameraMove = GameObject.Find("Main Camera").GetComponent<cameraRotation>();
         initialPosition = rectTransform.anchoredPosition;
         HideTooltip();
 
@@ -100,6 +102,7 @@ public class shovel : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IE
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        cameraMove.isDrag = true;
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             Base[] bases = FindObjectsOfType<Base>();
@@ -146,17 +149,20 @@ public class shovel : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IE
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        cameraMove.isDrag = true;
         ShowTooltip();
         
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        cameraMove.isDrag = false;
         HideTooltip();
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        cameraMove.isDrag = false;
         rectTransform.anchoredPosition = initialPosition;
         Base[] bases = FindObjectsOfType<Base>();
         foreach (Base baseObject in bases)

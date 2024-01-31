@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 386683219728660307}
   - component: {fileID: 747252768848119167}
   - component: {fileID: 1079214032089196976}
+  - component: {fileID: 6544352796046288882}
   m_Layer: 0
   m_Name: model_grass
   m_TagString: Untagged
@@ -82,4 +83,18 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789869943749768229}
+  m_Mesh: {fileID: -8321767116975796406, guid: 85077bca7420e55489c64cf988f0ee26, type: 3}
+--- !u!64 &6544352796046288882
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789869943749768229}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -8321767116975796406, guid: 85077bca7420e55489c64cf988f0ee26, type: 3}

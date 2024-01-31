@@ -11,7 +11,25 @@ public class Preview : MonoBehaviour
     private int generatedObjectsCount = 0;
     private float timer = 0f;
 
-    public Transform[] pathPoints;
+    
+    public Transform pathStart;
+    public List<Transform> pathPoints;
+    
+
+
+    private void OnEnable()
+    {
+        if (pathStart != null)
+        {
+            pathPoints.Add(pathStart);
+            foreach (Transform child in pathStart)
+            {
+                pathPoints.Add(child);
+            }
+
+        }
+
+    }
 
 
     void Update()
@@ -19,7 +37,7 @@ public class Preview : MonoBehaviour
         // 如果已经生成了足够数量的物体，则停止生成
         if (generatedObjectsCount >= numberOfObjectsToGenerate)
         {
-            Debug.Log("已生成足够数量的物体，停止生成。");
+            //Debug.Log("已生成足够数量的物体，停止生成。");
             return;
         }
 
@@ -36,11 +54,13 @@ public class Preview : MonoBehaviour
     private void GenerateObject()
     {
         // 生成物体
+        //print("生产了");
         GameObject line=Instantiate(objectToGenerate, transform.position, Quaternion.identity);
         line.GetComponent<PreviewPath>().pathPoints=pathPoints;
+     
         // 增加生成的物体数量
         generatedObjectsCount++;
 
-        Debug.Log("生成物体 #" + generatedObjectsCount);
+        //Debug.Log("生成物体 #" + generatedObjectsCount);
     }
 }

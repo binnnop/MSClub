@@ -60,6 +60,10 @@ MonoBehaviour:
   - {fileID: 6151904148790511991, guid: 13ce27d910b97da41a1e3591aa3351f1, type: 3}
   - {fileID: 6151904148790511991, guid: 3a0d375734e2a0c499d9a9cceaf41272, type: 3}
   - {fileID: 6151904148790511991, guid: 76e632ca5936a2a4f8e2c501c7ff4bbe, type: 3}
+  - {fileID: 8800624529875053107, guid: 0e7b076dd241e5a4aacfde96b4ba33f5, type: 3}
+  - {fileID: 8800624529875053107, guid: ed8a35b30c7ff6f42a609eb8433cfd61, type: 3}
+  - {fileID: 8800624529875053107, guid: 78dbd234ebf81724abbf3eb77179aea2, type: 3}
+  - {fileID: 6151904148790511991, guid: 25dc061194f2dbc4cb5782b39a275a31, type: 3}
   cardPrefabs:
   - {fileID: 2839552044300696790, guid: 0a698dcff61b4e34c930a3fea308663f, type: 3}
   - {fileID: 697966319674152361, guid: c2bf88842a704594a8219b0a91c3f7c4, type: 3}
@@ -74,10 +78,16 @@ MonoBehaviour:
   - {fileID: 2839552044300696790, guid: cdb15f462a481144d968659c33539027, type: 3}
   - {fileID: 2839552044300696790, guid: 1e8faea83fc184a47a6e81cdc407240c, type: 3}
   - {fileID: 2839552044300696790, guid: c1f05bba4138aa541b8025a1f65e1f7f, type: 3}
+  - {fileID: 2839552044300696790, guid: 7b6bf29c0052202409a85b3a3a8a2a7e, type: 3}
+  - {fileID: 2839552044300696790, guid: 117ad8b315870864dbf8aaa2c6b90897, type: 3}
+  - {fileID: 7598099186917606607, guid: a3ec708994c1260499e9b577f22afade, type: 3}
+  - {fileID: 2839552044300696790, guid: 8b9656da15df64e48a35cd31c20e4afd, type: 3}
   equippedTower:
   - Lightning
   - Leaf
-  - Roof
-  - Air
-  isTestMode: 1
-  life999: 1
+  - Sentry
+  - Supporter
+  - Blaze
+  - Geography
+  isTestMode: 0
+  life999: 0

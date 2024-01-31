@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SentryAI : MonoBehaviour
+public class SentryAI : EmptyAI
 {
     private Transform baseTransform;
     private int siblingIndex;
@@ -19,10 +19,10 @@ public class SentryAI : MonoBehaviour
         siblingIndex = transform.GetSiblingIndex();
 
         //Ñ°ÕÒ·ÇHeroµÄTowerAI
-        TowerAI frontTower = baseTransform.GetChild(siblingIndex - 1).GetComponent<TowerAI>();
+        TowerAI frontTower = baseTransform.GetChild(siblingIndex -2).GetComponent<TowerAI>();
         
-        if (baseTransform.GetChild(siblingIndex - 1).tag=="Hero")
-            frontTower = baseTransform.GetChild(siblingIndex - 2).GetComponent<TowerAI>();
+        if (baseTransform.GetChild(siblingIndex -2).tag=="Hero")
+            frontTower = baseTransform.GetChild(siblingIndex - 3).GetComponent<TowerAI>();
         if (frontTower != null)
         {
             frontTower.towerAtk += 5;
@@ -75,7 +75,7 @@ public class SentryAI : MonoBehaviour
                 }
             }
 
-            if(nextTower.tag != "Hero")
+            if (nextTower.tag != "Hero" && !nextTower.gameObject.CompareTag("Model")) 
             isFinding = false;
         }
     }

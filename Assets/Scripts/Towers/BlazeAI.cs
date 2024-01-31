@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlazeAI : MonoBehaviour
+public class BlazeAI : EmptyAI
 {
     public float attackSpeed = 2f;
     public float attackSpeedBuff;
     public int attackDamage = 20; 
-    public GameObject model;
+    //public GameObject model;
     private float timeSinceLastAttack = 0f;
     private Animator animator;
     public List<GameObject> enemy;
@@ -22,12 +22,12 @@ public class BlazeAI : MonoBehaviour
 
         if (transform.parent != null)
         {
-            SupporterAI[] supportTurrets = transform.parent.GetComponentsInChildren<SupporterAI>();
+            BuffallAI[] supportTurrets = transform.parent.GetComponentsInChildren<BuffallAI>();
             if (supportTurrets != null)
             {
-                foreach (SupporterAI supportTurret in supportTurrets)
+                foreach (BuffallAI supportTurret in supportTurrets)
                 {
-                    ModifyAttackSpeed(supportTurret.buffValue);
+                    supportTurret.buff(this);
                 }
             }
         }

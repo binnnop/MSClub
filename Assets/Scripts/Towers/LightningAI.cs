@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightningAI : EmptyAI
 {
-    public float damage = 1f;
+    public int damage = 50;
     public float range = 5f;
     public LineRenderer lightningRenderer;
     public GameObject allLight;
@@ -99,13 +99,16 @@ public class LightningAI : EmptyAI
             LightningCollision lightningCollision = collision.AddComponent<LightningCollision>();
 
             // 设置碰撞体关联的电塔
-            lightningCollision.SetTargetTower(targetTower,targetLine);
+            lightningCollision.damage = damage;
+            Transform start = targetLine.transform.GetChild(0);
+            Transform end = targetLine.transform.GetChild(1);
+            lightningCollision.SetTargetTower(this,targetTower,targetLine,start,end);
           
         }
         else
         {
             Debug.LogError("Failed to load CollisionPrefab from Resources!");
-        }
+        } 
     }
 
 

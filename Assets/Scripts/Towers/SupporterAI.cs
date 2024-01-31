@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SupporterAI : MonoBehaviour
+public class SupporterAI : BuffallAI
 {
     public float buffValue;
-    // Start is called before the first frame update
-    void Start()
+    
+     void Start()
     {
         Transform parentTransform = transform.parent;
 
@@ -18,7 +18,7 @@ public class SupporterAI : MonoBehaviour
             // 修改所有 "TowerAI" 的 AttackSpeed
             foreach (TowerAI towerAI in towerAIs)
             {
-                towerAI.ModifyAttackSpeed(buffValue);
+                buff(towerAI);
             }
 
             BlazeAI[] blazeAIs = parentTransform.GetComponentsInChildren<BlazeAI>();
@@ -26,7 +26,7 @@ public class SupporterAI : MonoBehaviour
             // 修改所有 "TowerAI" 的 AttackSpeed
             foreach (BlazeAI blaze in blazeAIs)
             {
-               blaze.ModifyAttackSpeed(buffValue);
+                buff(blaze);
             }
 
         }
@@ -35,6 +35,17 @@ public class SupporterAI : MonoBehaviour
             Debug.LogError("SupportTurret has no parent.");
         }
     }
+
+    public override void buff(TowerAI tower)
+    {
+        tower.ModifyAttackSpeed(buffValue);
+    }
+
+    public override void buff(BlazeAI tower)
+    {
+        tower.ModifyAttackSpeed(buffValue);
+    }
+
 }
 
 

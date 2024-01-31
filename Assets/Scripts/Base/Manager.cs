@@ -263,7 +263,7 @@ public class Manager : MonoBehaviour
     void initialPoints()
     {
         currentActivityPoints = 1;
-        currentBattlePoints = 1;
+        currentBattlePoints = 99;
         if (friendship.Count == 0)
         {
            friendship.Add(0);

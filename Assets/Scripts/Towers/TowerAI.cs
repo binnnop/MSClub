@@ -33,7 +33,11 @@ public class TowerAI : EmptyAI
     public int goldIncome = 0;
     public int totalDamage=0;
     public bool canAttackFly=true;
-    
+
+    public bool abilityBlast = false;
+    public bool abilityBurn = false;
+    private CardManager cardManager;
+
 
     protected void Start()
     {
@@ -43,16 +47,16 @@ public class TowerAI : EmptyAI
         model = transform.GetChild(0);
         model.forward *= -1;
         core = GameObject.Find("CORE");
-
+        cardManager = GameObject.Find("Engine").GetComponent<CardManager>();
 
         if (transform.parent != null)
         {
-            SupporterAI[] supportTurrets = transform.parent.GetComponentsInChildren<SupporterAI>();
-            if (supportTurrets != null)
+            BuffallAI[] supportTurrets = transform.parent.GetComponentsInChildren<BuffallAI>();
+            if (supportTurrets != null&&gameObject.tag!="Hero")
             {
-                foreach (SupporterAI supportTurret in supportTurrets)
+                foreach (BuffallAI supportTurret in supportTurrets)
                 {
-                    ModifyAttackSpeed(supportTurret.buffValue);
+                    supportTurret.buff(this);
                 }
             }
         }
@@ -64,8 +68,22 @@ public class TowerAI : EmptyAI
     protected void LateUpdate()
     {
         //Debug.Log(enemy.Count);
-
+        times += Time.deltaTime;
         enemy.RemoveAll(target => target == null || !target.activeSelf);
+
+        for (int i = 0; i < enemy.Count; i++)
+        {
+            EnemyAI script = enemy[i].GetComponent<EnemyAI>();
+            if (script.goDie)
+            {
+                enemy.Remove(enemy[i]);
+            }
+
+        }
+        foreach (GameObject enemyObject in enemy)
+        {
+           
+        }
 
         if (targetObject != null)
         {
@@ -73,11 +91,11 @@ public class TowerAI : EmptyAI
         }
         //有目标时 索敌
 
-        else if (enemy.Count > 0)
+        if (enemy.Count > 0)
         {
             GameObject closestEnemy = FindClosestEnemy();
 
-            if (closestEnemy != null)
+            if (closestEnemy != null&&closestEnemy!=targetObject)
             {
                 targetObject = closestEnemy;
                 LookTarget();
@@ -153,7 +171,7 @@ public class TowerAI : EmptyAI
         model.transform.LookAt(pos);
         
       
-        times += Time.deltaTime;
+        
          if (times >= attackSpeed / (1 + attackSpeedBuff))
             {
             Attack();
@@ -163,16 +181,29 @@ public class TowerAI : EmptyAI
     }
 
 
-    private void Attack()
+    public void Attack()
     {
+        if (isGold)
+        {
+            cardManager.currentMoney += goldIncome;
+            cardManager.UpdateMoneyText();
+        }
 
+        if (abilityBurn)
+            bulletPrefab = Resources.Load("FireBullet") as GameObject;
         GameObject bullet = Instantiate(bulletPrefab,firePos.position,Quaternion.identity);
-       
+
         //给子弹挂脚本
+        EnemyAI enemy = targetObject.GetComponent<EnemyAI>();
+
         bullet.AddComponent<BulletMove>().target=targetObject;
         bullet.GetComponent<BulletMove>().scripts = this;
         bullet.GetComponent<BulletMove>().atk = towerAtk+heroRobotIncrease;
+        bullet.GetComponent<BulletMove>().abilityBlast = abilityBlast;
+        bullet.GetComponent<BulletMove>().abilityBurn = abilityBurn;
         bullet.transform.LookAt(targetObject.transform.position);
+
+        enemy.voidHealth -= towerAtk;
         totalDamage += (towerAtk + heroRobotIncrease);
     }
 
@@ -186,24 +217,55 @@ public class TowerAI : EmptyAI
     public GameObject  FindClosestEnemy()
     {
        GameObject closestEnemy = null;
+
         float closestDistance = float.MaxValue;
 
         foreach (var enemyTransform in enemy)
         {
-            if (enemyTransform != null && enemyTransform.gameObject.activeSelf)
+           
+
+            if (enemyTransform != null && enemyTransform.gameObject.activeSelf )
             {
                 float distanceToCore = GetNavMeshPathDistance(enemyTransform);
 
-                if (distanceToCore < closestDistance)
+                //bool hasObstacle = CheckObstacleBetweenTurretAndTarget(enemyTransform.transform);
+
+                if (distanceToCore < closestDistance )
                 {
                     closestDistance = distanceToCore;
                     closestEnemy = enemyTransform;
                 }
             }
+
+
+
         }
 
         return closestEnemy;
     }
+
+    public bool CheckObstacleBetweenTurretAndTarget(Transform targetTransform)
+    {
+        // 发射一条射线，检测炮塔和目标之间是否存在遮挡物
+        Vector3 turretPosition = transform.position;
+        Vector3 targetPosition = targetTransform.position;
+        Vector3 direction = targetPosition - turretPosition;
+
+        RaycastHit[] hits = Physics.RaycastAll(turretPosition, direction, Vector3.Distance(turretPosition,targetPosition));
+
+        foreach (var hit in hits)
+        {
+            // 如果射线击中了遮挡物，并且该遮挡物带有"ground"标签，返回 true
+            if (hit.collider.gameObject != targetTransform.gameObject && hit.collider.CompareTag("ground"))
+            {
+                return true;
+            }
+        }
+
+        // 没有击中带有"ground"标签的遮挡物，返回 false
+        return false;
+    }
+
 
     public float GetNavMeshPathDistance(GameObject target)
     {
@@ -215,8 +277,11 @@ public class TowerAI : EmptyAI
 
             for (int i = 0; i < path.corners.Length - 1; i++)
             {
+                   
                 distance += Vector3.Distance(path.corners[i], path.corners[i + 1]);
             }
+            distance += Vector3.Distance(target.transform.position, path.corners[0]);
+            distance += Vector3.Distance( path.corners[path.corners.Length-1],core.transform.position);
 
             return distance;
         }

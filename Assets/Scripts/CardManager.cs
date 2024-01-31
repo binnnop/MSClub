@@ -24,22 +24,42 @@ public class CardManager : MonoBehaviour
 
     public int initialMoney = 100;
     public int incomePerSecond = 10;
-     int incomePerFortress = 1;
+     int incomePerFortress = 2;
     public int currentMoney;
     private float timer;
     public TextMeshProUGUI moneyText;
     public int maxLayer;
     Manager manager;
+    MapManager mapManager;
     test test;
     public float shovelPrice = 0.8f;
+
+    public Material voidMaterial;
 
     void Start()
     {
         nowCardGenerationInterval = cardGenerationInterval;
+        //mapManager = GameObject.Find("MapManager").GetComponent<MapManager>();
         test = GameObject.Find("test").GetComponent<test>();
-        if(!test.isTestMode)
-        manager = GameObject.Find("Manager").GetComponent<Manager>();
-        
+        if (!test.isTestMode)
+        {
+            mapManager = GameObject.Find("MapManager").GetComponent<MapManager>();
+           // manager = GameObject.Find("Manager").GetComponent<Manager>();
+        }
+
+        if (mapManager != null)
+        {
+            for (int i = 0; i < mapManager.deck.Count;i++)
+            {
+                GenerateCard(mapManager.deck[i]);
+            }
+            ArrangeCards();
+        }
+
+
+
+
+        /*
         if (manager != null)
         {
             GenerateCard(manager.equippedTower[0]);
@@ -48,11 +68,12 @@ public class CardManager : MonoBehaviour
             GenerateCard(manager.equippedTower[3]);
             ArrangeCards();
         }
+        */
         else {
-            GenerateCard(test.equippedTower[0]);
-            GenerateCard(test.equippedTower[1]);
-            GenerateCard(test.equippedTower[2]);
-            GenerateCard(test.equippedTower[3]);
+            for (int i = 0; i < test.equippedTower.Count; i++)
+            {
+                GenerateCard(test.equippedTower[i]);
+            }
             ArrangeCards();
         }
 
@@ -67,10 +88,10 @@ public class CardManager : MonoBehaviour
 
         if (timer >= 1f) // 每秒更新一次
         {
-            GameObject[] fortressObjects = GameObject.FindGameObjectsWithTag("Fortress");
-            int fortressCount = fortressObjects.Length;
-            int totalIncome = incomePerSecond + (fortressCount* incomePerFortress);
-            currentMoney += totalIncome;
+           // GameObject[] fortressObjects = GameObject.FindGameObjectsWithTag("Fortress");
+            //int fortressCount = fortressObjects.Length;
+           // int totalIncome = incomePerSecond + (fortressCount* incomePerFortress);
+            currentMoney +=incomePerSecond;
             UpdateMoneyText();
             timer = 0f;
         }
@@ -79,11 +100,12 @@ public class CardManager : MonoBehaviour
   
 
  
-    void GenerateCard(string type)
+    public void GenerateCard(string type)
     {
 
         // 根据卡牌类型和花色生成卡牌对象
         //GameObject cardPrefab = GetCardPrefab(type);
+        /*
         if (!test.isTestMode)
         {
             foreach (GameObject cardPrefab in manager.cardPrefabs)
@@ -95,6 +117,7 @@ public class CardManager : MonoBehaviour
             }
         }
         else {
+            */
             foreach (GameObject cardPrefab in test.cardPrefabs)
             {
                 if (cardPrefab.name.Contains(type))
@@ -104,7 +127,7 @@ public class CardManager : MonoBehaviour
             }
 
 
-        }
+        
         
 
     }

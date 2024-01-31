@@ -8,6 +8,7 @@ using TMPro;
 public class Base : MonoBehaviour
 {
     public GameObject buildingPrefab;  // 建筑的预制体
+    public GameObject rangePrefab;
     public Transform canvas;  // Base 下的 Canvas
 
     public int cardCount;  // 统计卡牌堆叠的层数
@@ -20,12 +21,17 @@ public class Base : MonoBehaviour
     public Vector3 buildingMergin;
     public Vector3 cannonMergin;
     public CardManager manager;
-    public Manager game;
+    public MapManager game;
     public test test;
     public float shovelPrice=0.8f;
 
     public GameObject limitTips;
     public GameObject limitCount;
+    public Material voidMaterial;
+    public GameObject voidObject;
+    public GameObject voidObject2;
+
+    public bool isVoidState=false;
 
     //英雄摆放
     public string[] heroTargetTags = { "Tower", "Fortress" };
@@ -36,10 +42,11 @@ public class Base : MonoBehaviour
         //cardInfo.OnCardDropped += OnCardDropped;
         test = GameObject.Find("test").GetComponent<test>();
         if (!test.isTestMode)
-            game = GameObject.Find("Manager").GetComponent<Manager>();  
+            game = GameObject.Find("MapManager").GetComponent<MapManager>();  
         
         teleport = transform.GetChild(1).gameObject;
         manager = GameObject.Find("Engine").GetComponent<CardManager>();
+        voidMaterial = manager.voidMaterial;
         shovelPrice = manager.shovelPrice;
 
     }
@@ -144,6 +151,117 @@ public class Base : MonoBehaviour
 
     }
 
+    public void GenerateBuilding(string major,int price)
+    {
+        // 计算建筑的高度，每层递增
+        float buildingHeightOffset = (cardCount + extraCount) * buildingHeight;
+        buildingPrefab = GetTower(major);
+
+        GameObject building;
+        if (major == "Cannon")
+        {
+            building = Instantiate(buildingPrefab, transform.position + new Vector3(0f, buildingHeightOffset, 0f) + buildingMergin + cannonMergin, Quaternion.identity, transform);
+        }
+        else
+        {
+            building = Instantiate(buildingPrefab, transform.position + new Vector3(0f, buildingHeightOffset, 0f) + buildingMergin, Quaternion.identity, transform);
+            priceAdd x = building.GetComponent<priceAdd>();
+            x.price = price;
+        }
+        if (major == "Sentry")
+        {
+            extraCount++;
+        }
+        cardCount++;
+        print("Count:" + cardCount);
+        AdjustHeroLocation();
+        closeRange();
+
+        if (major == "Leaf")
+        {
+            CheckLastThreeChildren();
+
+        }
+        if (major == "Leaf2")
+        {
+            StartCoroutine(CheckLastThreeChildren2());
+        }
+
+
+    }
+
+
+    public void GenerateVoid(string major)
+    {
+        if (!isVoidState)
+        {
+            Base[] bases = FindObjectsOfType<Base>();
+            foreach (Base baseObject in bases)
+            {
+                if(baseObject!=this)
+                baseObject.HideVoid();
+            }
+
+            float buildingHeightOffset = (cardCount + extraCount) * buildingHeight;
+
+            EmptyAI sourceTower = GetTower(major).GetComponent<EmptyAI>();
+            buildingPrefab = sourceTower.model.gameObject;       
+            GameObject building;
+            GameObject range;
+  
+            if (major == "Sentry")
+            {
+                building = Instantiate(buildingPrefab, transform.position + new Vector3(0f, buildingHeightOffset+buildingHeight*0.5f, 0f) + buildingMergin , Quaternion.identity, transform);
+            }
+            else
+            {
+                building = Instantiate(buildingPrefab, transform.position + new Vector3(0f, buildingHeightOffset, 0f) + buildingMergin, Quaternion.identity, transform);
+            }
+            voidObject = building;
+            building.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            if (major == "Sentry")
+            {
+                MeshRenderer[] meshes= building.GetComponentsInChildren<MeshRenderer>();
+                foreach (MeshRenderer mesh in meshes)
+                {
+                    mesh.material = voidMaterial;
+                }
+            }
+            else
+            building.GetComponent<MeshRenderer>().material = voidMaterial;
+
+
+            if (sourceTower.greenArea != null)
+            {
+                rangePrefab = GetTower(major).GetComponent<EmptyAI>().greenArea.gameObject;
+                range = Instantiate(rangePrefab, transform.position + new Vector3(0f, buildingHeightOffset, 0f) + buildingMergin, Quaternion.identity, transform);
+                voidObject2 = range;
+               range.transform.localScale *= 0.7f;
+            }
+                
+
+
+
+            closeRange();
+            isVoidState = true;
+        }
+      
+
+    }
+
+    public void HideVoid()
+    {
+        if (isVoidState&&voidObject!=null)
+        {
+            Destroy(voidObject);
+            if(voidObject2!=null)
+            Destroy(voidObject2);
+        }
+        isVoidState =false;
+
+
+    }
+
     public void GenerateBuilding(GameObject major)
     {
         // 计算建筑的高度，每层递增
@@ -171,6 +289,8 @@ public class Base : MonoBehaviour
         
     }
 
+
+
     public void Decrease()
     {
         int childCount = transform.childCount;
@@ -178,7 +298,7 @@ public class Base : MonoBehaviour
         if (cardCount > 0)
         {
             Transform lastChild = transform.GetChild(childCount - 1);
-            if (lastChild.gameObject.tag == "Hero")
+            if (lastChild.gameObject.tag == "Hero" || lastChild.gameObject.tag == "Model")
             {
                 lastChild = transform.GetChild(childCount - 2);
             }
@@ -188,7 +308,9 @@ public class Base : MonoBehaviour
             }
             print(lastChild.gameObject + "    Destroyed");
             Destroy(lastChild.gameObject);
-            
+
+           
+
             cardCount--;
             
             AdjustHeroLocation();
@@ -211,6 +333,9 @@ public class Base : MonoBehaviour
             if (cardCount > 0)
             {
                 Transform lastChild = transform.GetChild(childCount - beginIndex);
+
+               
+
                 if (lastChild.gameObject.tag == "Hero")
                 {
                     lastChild = transform.GetChild(childCount - (beginIndex+1));
@@ -221,6 +346,46 @@ public class Base : MonoBehaviour
                 }
                 print(lastChild.gameObject + "    Destroyed");
                 Destroy(lastChild.gameObject);
+
+
+                if (lastChild.CompareTag("Model"))
+                {
+                   
+                    beginIndex += 1;
+
+                    Transform BChild = transform.GetChild(childCount - beginIndex);
+                    if (BChild.gameObject.tag == "Hero")
+                    {
+                       BChild = transform.GetChild(childCount - (beginIndex + 1));
+                    }
+                    if (BChild.name == "Sentry(Clone)")
+                    {
+                        extraCount--;
+                    }
+                    print(BChild.gameObject + "BB    Destroyed");
+                    Destroy(BChild.gameObject);
+
+                    if (BChild.CompareTag("Model"))
+                    {
+                        beginIndex += 1;
+
+                        Transform CChild = transform.GetChild(childCount - beginIndex);
+                        if (CChild.gameObject.tag == "Hero")
+                        {
+                            CChild = transform.GetChild(childCount - (beginIndex + 1));
+                        }
+                        if (CChild.name == "Sentry(Clone)")
+                        {
+                            extraCount--;
+                        }
+                        print(CChild.gameObject + "CC    Destroyed");
+                        Destroy(CChild.gameObject);
+
+
+                    }
+
+                }
+
 
                 beginIndex += 1;
                 cardCount--;
@@ -292,7 +457,7 @@ public class Base : MonoBehaviour
 
 
     GameObject GetTower(string name)
-    {
+    {/*
         if (game != null)
         {
             foreach (GameObject towerPrefab in game.towerPrefabs)
@@ -305,6 +470,7 @@ public class Base : MonoBehaviour
             return null;
         }
         else {
+            */
             foreach (GameObject towerPrefab in test.towerPrefabs)
             {
                 if (towerPrefab.name == name)
@@ -313,7 +479,7 @@ public class Base : MonoBehaviour
                 }
             }
             return null;
-        }
+     
     }
 
     bool CheckForTargetTag()
@@ -428,8 +594,9 @@ public class Base : MonoBehaviour
                 GameObject childObject = transform.GetChild(i-additionalCheckCount).gameObject;
                 print(i + "     " + childObject);
 
-                if (childObject.CompareTag("Hero"))
+                if (childObject.CompareTag("Hero")||childObject.CompareTag("Model"))
                 {           
+                    print("被我抓到了，新叶");
                     additionalCheckCount++;
                     continue;
                 }
@@ -440,6 +607,7 @@ public class Base : MonoBehaviour
                 {
                     isContinuousLeaf = false;
                     print("leafComponent == null || leafComponent.level != level" + 1);
+                    print(childObject.name);
                     break;
                 }
 
@@ -472,8 +640,9 @@ public class Base : MonoBehaviour
                 GameObject childObject = transform.GetChild(i - additionalCheckCount).gameObject;
                 print(i + "     " + childObject);
 
-                if (childObject.CompareTag("Hero"))
+                if (childObject.CompareTag("Hero") || childObject.name.Contains("Model"))
                 {
+                    print("被我抓到了，新叶");
                     additionalCheckCount++;
                     continue;
                 }

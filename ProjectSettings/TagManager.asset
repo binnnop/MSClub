@@ -19,6 +19,7 @@ TagManager:
   - base
   - water
   - ground
+  - jump
   layers:
   - Default
   - TransparentFX

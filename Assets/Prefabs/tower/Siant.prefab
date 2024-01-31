@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8800624529875053107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939815508871391582}
+  - component: {fileID: -7225739756894632299}
+  - component: {fileID: 8190883551547824666}
+  m_Layer: 0
+  m_Name: Siant
+  m_TagString: Tower
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &939815508871391582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800624529875053107}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7885059730316419670}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7225739756894632299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800624529875053107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1acdd9643f5d3904a9f0c7209ba364a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 200
+--- !u!114 &8190883551547824666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800624529875053107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a92dc1dcda3194ca490b1994b84265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  greenArea: {fileID: 0}
+  model: {fileID: 7885059730316419670}
+  buffValue: 10
+--- !u!1001 &9154164622762192711
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 939815508871391582}
+    m_Modifications:
+    - target: {fileID: 1326165184390057233, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326165184390057233, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326165184390057233, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326165184390057233, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326165184390057233, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326165184390057233, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326165184390057233, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326165184390057233, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326165184390057233, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326165184390057233, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326165184390057233, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833482710503305297, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+      propertyPath: m_Name
+      value: Model_Siant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+--- !u!4 &7885059730316419670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1326165184390057233, guid: 68e056431963d3f4396553755cbf1caf, type: 3}
+  m_PrefabInstance: {fileID: 9154164622762192711}
+  m_PrefabAsset: {fileID: 0}

@@ -43,12 +43,14 @@ public class BulletMoveAir : BulletMove
                     Rigidbody targetRb = collider.GetComponent<Rigidbody>();
                     if (targetRb != null)
                     {
+                        
                         //NavMeshAgent navMeshAgent = collider.gameObject.GetComponent<NavMeshAgent>();
                         //navMeshAgent.enabled = false;
                         EnemyAI e = collider.gameObject.GetComponent<EnemyAI>();
                         e.StartCoroutine("DisableAndEnableNavMeshAgent");
                         Vector3 impactDirection = transform.forward;  // ·´Ïò»÷ÍË
                         //impactDirection.y = 0;
+                        targetRb.isKinematic = false;
                         targetRb.AddForce(impactDirection * impactForce, ForceMode.Impulse);
                     }
                 }

@@ -23,10 +23,12 @@ public class RoofAI : TowerAI
     }
 
 
-    private void Attack()
+    private new void Attack()
     {
-        
+        if (abilityBurn)
+            bulletPrefab = Resources.Load("FireBullet") as GameObject;
         GameObject bullet = Instantiate(bulletPrefab, firePos.position, Quaternion.identity);
+        bullet.transform.localScale *= 2;
 
         //¸ø×Óµ¯¹Ò½Å±¾
         bullet.AddComponent<roofBulletMove>().target = targetObject;
@@ -36,7 +38,10 @@ public class RoofAI : TowerAI
         bullet.GetComponent<roofBulletMove>().sSpeed =speed;
         bullet.GetComponent<roofBulletMove>().attackRadius = attackRadius;
         bullet.GetComponent<roofBulletMove>().atk = towerAtk + heroRobotIncrease;
-      
+
+        bullet.GetComponent<roofBulletMove>().abilityBlast = abilityBlast;
+        bullet.GetComponent<roofBulletMove>().abilityBurn = abilityBurn;
+
         totalDamage += (towerAtk + heroRobotIncrease);
     }
 

@@ -17,10 +17,10 @@ public class MageAI : TowerAI
         bulletPrefab = Resources.Load<GameObject>("MageBullet");
         core = GameObject.Find("CORE");
 
-        SupporterAI[] supportTurrets = transform.parent.GetComponentsInChildren<SupporterAI>();
-        foreach (SupporterAI supportTurret in supportTurrets)
+        BuffallAI[] supportTurrets = transform.parent.GetComponentsInChildren<BuffallAI>();
+        foreach (BuffallAI supportTurret in supportTurrets)
         {
-            ModifyAttackSpeed(supportTurret.buffValue);
+            supportTurret.buff(this);
         }
     }
 
@@ -117,15 +117,18 @@ public class MageAI : TowerAI
     }
     */
 
-    private void Attack()
+    private new void Attack()
     {
-
+        if (abilityBurn)
+            bulletPrefab = Resources.Load("FireBullet") as GameObject;
         GameObject bullet = Instantiate(bulletPrefab, firePos.position, Quaternion.identity);
         
         //¸ø×Óµ¯¹Ò½Å±¾
         bullet.AddComponent<BulletMove>().target = targetObject;
         bullet.GetComponent<BulletMove>().scripts = this;
         bullet.GetComponent<BulletMove>().atk = towerAtk;
+        bullet.GetComponent<BulletMove>().abilityBlast = abilityBlast;
+        bullet.GetComponent<BulletMove>().abilityBurn = abilityBurn;
         bullet.transform.LookAt(targetObject.transform.position);
         totalDamage += (towerAtk + heroRobotIncrease);
 
@@ -139,6 +142,8 @@ public class MageAI : TowerAI
             bullet2.AddComponent<BulletMove>().target = enemy2;
             bullet2.GetComponent<BulletMove>().scripts = this;
             bullet2.GetComponent<BulletMove>().atk = towerAtk;
+            bullet2.GetComponent<BulletMove>().abilityBlast = abilityBlast;
+            bullet2.GetComponent<BulletMove>().abilityBurn = abilityBurn;
             bullet2.transform.LookAt(enemy2.transform.position);
             totalDamage += (towerAtk + heroRobotIncrease);
 
@@ -155,6 +160,8 @@ public class MageAI : TowerAI
                 bullet3.AddComponent<BulletMove>().target = enemy3;
                 bullet3.GetComponent<BulletMove>().scripts = this;
                 bullet3.GetComponent<BulletMove>().atk = towerAtk;
+                bullet3.GetComponent<BulletMove>().abilityBlast = abilityBlast;
+                bullet3.GetComponent<BulletMove>().abilityBurn = abilityBurn;
                 bullet3.transform.LookAt(enemy3.transform.position);
                 totalDamage += (towerAtk + heroRobotIncrease);
 
@@ -174,25 +181,31 @@ public class MageAI : TowerAI
         {
             if (enemyTransform != null && enemyTransform.gameObject.activeSelf)
             {
-                float navMeshPathDistance = GetNavMeshPathDistance(enemyTransform);
+                //bool hasObstacle = CheckObstacleBetweenTurretAndTarget(enemyTransform.transform);
+                
+                    float navMeshPathDistance = GetNavMeshPathDistance(enemyTransform);
 
-                if (closestEnemies.Count < n)
-                {
-                    closestEnemies.Add(enemyTransform);
-                }
-                else
-                {
-                    closestEnemies.Sort((a, b) => GetNavMeshPathDistance(a)
-                                                  .CompareTo(GetNavMeshPathDistance(b)));
-
-                    float farthestDistance = GetNavMeshPathDistance(closestEnemies[n - 1]);
-
-                    if (navMeshPathDistance < farthestDistance)
+                    if (closestEnemies.Count < n)
                     {
-                        closestEnemies.RemoveAt(n - 1);
                         closestEnemies.Add(enemyTransform);
                     }
-                }
+                    else
+                    {
+                        closestEnemies.Sort((a, b) => GetNavMeshPathDistance(a)
+                                                      .CompareTo(GetNavMeshPathDistance(b)));
+
+                        float farthestDistance = GetNavMeshPathDistance(closestEnemies[n - 1]);
+
+                        if (navMeshPathDistance < farthestDistance)
+                        {
+                            closestEnemies.RemoveAt(n - 1);
+                            closestEnemies.Add(enemyTransform);
+                        }
+                    }
+
+
+               
+                   
             }
         }
 

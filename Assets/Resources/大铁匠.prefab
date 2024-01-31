@@ -67,7 +67,7 @@ NavMeshAgent:
   avoidancePriority: 50
   m_AngularSpeed: 180
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
@@ -127,7 +127,8 @@ MonoBehaviour:
   coreControl: {fileID: 0}
   core: {fileID: 0}
   atk: 1
-  maxHitPoint: 10000
+  maxHitPoint: 2000
+  voidHealth: 0
   HitPoint: 0
   scripts: {fileID: 0}
   route: {fileID: 0}
@@ -144,7 +145,15 @@ MonoBehaviour:
   isStatic: 0
   isCompleteBorn: 0
   fallOut: 0
+  fallOut2: 0
+  goDie: 0
   holdingBaby: {fileID: 0}
+  debuff_onFire: 0
+  rig: {fileID: 0}
+  verticalSpeed: 4
+  sSpeed: 8
+  targetPosition: {x: 0, y: 0, z: 0}
+  isRoofGo: 0
 --- !u!1 &6670272497920095637
 GameObject:
   m_ObjectHideFlags: 0

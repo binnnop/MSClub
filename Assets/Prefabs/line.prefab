@@ -54,8 +54,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  moveSpeed: 30
-  previewHeight: 1
+  moveSpeed: 15
+  previewHeight: 3
   previewLength: 11
   isMid: 0
   isGo: 0

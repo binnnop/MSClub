@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FactoryAI : MonoBehaviour
+public class FactoryAI : EmptyAI
 {
     
     public float moneyIncreaseInterval = 5f;
@@ -30,7 +30,7 @@ public class FactoryAI : MonoBehaviour
     {
         if (home != null&& home.cardCount<cardManager.maxLayer)
         {
-            home.GenerateBuilding("Factory");
+            home.GenerateBuilding("Factory",0);
         }
     }
 }

@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject core;
     public int atk;
     public int maxHitPoint;
+    public int voidHealth;
     public int HitPoint;
     public TowerAI scripts = null;
     public GameObject route;
@@ -36,106 +37,294 @@ public class EnemyAI : MonoBehaviour
     public bool isCompleteBorn = false;
 
     public bool fallOut=false;
-    
+    public bool fallOut2 = false;
+
+    public bool goDie = false;
+    public bool isStunOver =false;
 
     //气球物体
     public GameObject holdingBaby;
- 
+
+    //Debuff
+    public bool debuff_onFire=false;
+    const int debuff_onFire_damage = 10;
+
+    public Rigidbody rig;
+
+    public const float g = 9.8f;
+    public float verticalSpeed = 4f;
+    private Vector3 moveDirection;
+    private float angleSpeed;
+    private float angle = 45;
+    private float time;
+    public float sSpeed = 8;
+    public Vector3 targetPosition;
+    public bool isRoofGo = false;
+
+    public NavMeshLink link;
+    public NavMeshLink lastLink;
+    public bool hasLink=false;
+
+    public bool canJump = true;
 
     void Start()
     {
+        //agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
         HitPoint = maxHitPoint;
+        voidHealth = maxHitPoint;
+        rig = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        if (transform.position.y < -20)
+        if (transform.position.y < 0)
             Destroy(gameObject);
 
         //静止系敌人
         if (!isStatic) {
 
-
-            if (isFlying)
+            if (agent.enabled)
             {
-                if (!isPlayingFlyingEnd)
-                {
-                    // 如果是飞行生物，直接移动到目标位置，忽略y轴
-                    Vector3 targetPosition = allPos[currentDestinationIndex].position;
-
-                    if(verticalFlying)
-                    targetPosition.y = transform.position.y;
-                    
-                    transform.LookAt(targetPosition);
-                    transform.Translate(Vector3.forward * Time.deltaTime * flyingSpeed);
-                    
-                    
-                    //transform.position = Vector3.MoveTowards(transform.position, targetPosition, flyingSpeed * Time.deltaTime);
-                    if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
-                    {                
-                        checkBomb();
-                    }
-                }
-
-                if (isflyingUp)
-                {
-                    transform.Translate(Vector3.up * flyingSpeed * Time.deltaTime);
-                    if (transform.position.y > 30)
-                        Destroy(gameObject);
-                }
-                UpdateHealthBarPosition();
-                
+                print(gameObject.name + "          " + agent.isOnNavMesh);
             }
 
 
 
-            else
-            {
-                //非飞行单位-----代理开启状态
-                if (agent.isOnNavMesh && agent.enabled)
-                {
-                    #region  看向目标
-                    Vector3 nowLookAt = agent.destination;
-                    nowLookAt.y = transform.position.y;
-                    Vector3 targetDirection = (agent.steeringTarget - transform.position).normalized;
-                    targetDirection.y = 0;
-                    Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-                    if (targetRotation != Quaternion.Euler(0,0,0)) 
-                        transform.rotation = Quaternion.Slerp(transform.rotation,targetRotation, Time.deltaTime );
-                    #endregion
-                    //backToMesh();
-   
 
-                    # region 2.检查目标
-                    if (agent.remainingDistance < 0.1f)
+
+            //非飞行单位-----代理开启状态
+            if (agent.isOnNavMesh && agent.enabled)
+            {
+                
+                if (agent.isOnOffMeshLink)
+                {
+
+
+                    print("isOnOffMeshLink");
+
+
+                    OffMeshLinkData data = agent.currentOffMeshLinkData;
+                    Vector3 endPos = data.endPos + Vector3.up * agent.baseOffset;
+
+
+
+
+                    //处理到一半被切断的情况
+                    if (tryFindLink() == null&&!hasLink)
                     {
-                        
+                        if (link.tag == "jump" && isRoofGo)
+                        {
+                            initialRoof(endPos);
+                            print("上次的点" + endPos+"     "+data);
+                            hasLink = true;
+                        }
+                    }
+                    //没有被切断的情况，记录Lastlink
+                    else
+                    {
+                        if(tryFindLink()!=null)
+                        link = tryFindLink();
+
+                        if (link.tag == "jump" && !isRoofGo)
+                        {
+                            initialRoof(endPos);
+                        }
+                        else if (isRoofGo)
+                        {
+                            time += Time.deltaTime;
+                            float test = verticalSpeed - g * time;
+                            transform.Translate(moveDirection.normalized * sSpeed * Time.deltaTime, Space.World);
+                            transform.Translate(Vector3.up * test * Time.deltaTime * 4, Space.World);
+                            float testAngle = -angle + angleSpeed * time;
+                            transform.eulerAngles = new Vector3(testAngle, transform.eulerAngles.y, transform.eulerAngles.z);
+                        }
+                        else
+                        {
+                            rig.isKinematic = true;
+                            //Move the agent to the end point
+                            agent.transform.position = Vector3.MoveTowards(agent.transform.position, endPos, agent.speed * Time.deltaTime);
+                            print(transform.position + "        start:" + data.startPos + "        end:" + data.endPos);
+
+                            //when the agent reach the end point you should tell it, and the agent will "exit" the link and work normally after that      
+                        }
+
+
+                    }
+
+
+
+
+
+
+                    //完成
+                    // if (  agent.transform.position == endPos)
+                    if (Vector3.Distance(agent.transform.position, endPos) < 2 && isRoofGo)
+                    {
+                        agent.CompleteOffMeshLink();
+                        hasLink = false;
+                        link = null;
+                        time = 0;
+
+                        rig.isKinematic = false;
+                        isRoofGo = false;
+                        NavMeshHit navMeshHit;
+                        if (NavMesh.SamplePosition(agent.transform.position, out navMeshHit, 2,NavMesh.AllAreas))
+                        {
+                            
+                            transform.position = navMeshHit.position;
+                            agent.destination = allPos[currentDestinationIndex].position;
+                            agent.CalculatePath(allPos[currentDestinationIndex].position, path);
+                            agent.SetPath(path);
+                            print("重新寻找到了网格并且setPath");
+                            //rig.isKinematic = false;
+                        }
+                        //backToMesh();
+                        //SetNextDestination(); 
+
+
+                    }
+                    else if (Vector3.Distance(agent.transform.position, endPos) < 0.1f)
+                    {
+                        rig.isKinematic = false;
+                        agent.CompleteOffMeshLink();
+                        hasLink = false;
+                        link = null;
+                        time = 0;
+                    }
+
+                }
+
+                if (fallOut2 && isStunOver)
+                {
+
+                    if (!agent.isOnNavMesh)
+                    {
+                        NavMeshHit navMeshHit;
+                        if (NavMesh.FindClosestEdge(agent.transform.position, out navMeshHit, NavMesh.AllAreas))
+                        {
+                            isStunOver = false;
+                            fallOut2 = false;
+                            transform.position = navMeshHit.position;
+                            agent.destination = allPos[currentDestinationIndex].position;
+                            agent.CalculatePath(allPos[currentDestinationIndex].position, path);
+                            agent.SetPath(path);
+                            Collider c = GetComponent<Collider>();
+                            c.isTrigger = true;
+                        }
+                        print("stunOverReset");
+                    }
+                    else
+                    {
+                        isStunOver = false;
+                        fallOut2 = false;
+                        Collider c = GetComponent<Collider>();
+                        c.isTrigger = true;
+                    }
+                }
+
+
+                #region  看向目标
+                Vector3 nowLookAt = agent.destination;
+                nowLookAt.y = transform.position.y;
+                Vector3 targetDirection = (agent.steeringTarget - transform.position).normalized;
+                targetDirection.y = 0;
+                Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+                if (targetRotation != Quaternion.Euler(0, 0, 0))
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime);
+                #endregion
+                //backToMesh();
+
+
+                #region 2.检查目标
+                /*
+                agent.CalculatePath(allPos[currentDestinationIndex].position, path);
+                agent.SetPath(path);
+                */
+                if (!agent.isOnOffMeshLink)
+                {
+                    if (Vector3.Distance(agent.destination, allPos[allPos.Length - 1].position) > 2)
+                    {
+                        print("destination：" + agent.destination);
+                        agent.CalculatePath(allPos[currentDestinationIndex].position, path);
+                        agent.SetPath(path);
+                    }
+
+
+                    // Debug.Log("Path Points: " + string.Join(", ", path.corners));
+
+                    if (Vector3.Distance(transform.position, allPos[currentDestinationIndex].position) < 1f)
+                    {
+
                         if (currentDestinationIndex != allPos.Length - 1)
                         {
-                            print("goingToSetNextDestination");
+                            // print("goingToSetNextDestination");
                             currentDestinationIndex++;
                             SetNextDestination();
 
                         }
                         //else if(Vector3.Distance(transform.position, allPos[allPos.Length - 1].position) < 0.1f)
-                        else
+                        else if (Vector3.Distance(transform.position, allPos[allPos.Length - 1].position) < 1f)
                         {
-                            print(agent.destination);
+                            //print(agent.destination);
                             checkBomb();
                         }
 
                     }
 
-                    #endregion
 
-                    UpdateHealthBarPosition();
                 }
-                   
+
+
+
+                #endregion
+
+                UpdateHealthBarPosition();
             }
+
+          
+            }
+      
+
+        if (voidHealth < 0)
+        {
+            goDie = true;
         }
-        
+
     }
-    
+
+
+    public void StartBurning()
+    {
+        debuff_onFire= true;
+        InvokeRepeating("debuff_Burning", 1f, 1f); // 每秒调用ApplyBurnDamage方法
+    }
+
+    public void debuff_Burning() {
+        hurt(debuff_onFire_damage);   
+    }
+
+    void initialRoof(Vector3 pos)
+    {
+        targetPosition = pos;
+        rig.isKinematic = true;
+
+        float tmepDistance = Vector3.Distance(transform.position, targetPosition);
+        float tempTime = tmepDistance / sSpeed;
+        float riseTime, downTime;
+        riseTime = downTime = tempTime / 2;
+        verticalSpeed = g * riseTime;
+        transform.LookAt(targetPosition);
+        float tempTan = verticalSpeed / sSpeed;
+        double hu = Mathf.Atan(tempTan);
+        angle = (float)(180 / Mathf.PI * hu);
+        transform.eulerAngles = new Vector3(-angle, transform.eulerAngles.y, transform.eulerAngles.z);
+        angleSpeed = angle / riseTime;
+        moveDirection = targetPosition - transform.position;
+        isRoofGo = true;
+
+
+    }
+
     void SetNextDestination()
     {
         // 如果路径点数组为空，直接返回
@@ -144,10 +333,7 @@ public class EnemyAI : MonoBehaviour
             Debug.LogWarning("Path points array is not set or empty.");
             return;
         }
-
-        // 设置下一个目标点
-        //CalculatePath（Vector3 targetPosition, NavMeshPath path）
-        //agent.SetDestination(allPos[currentDestinationIndex].position);
+        agent.destination = allPos[currentDestinationIndex].position;
         agent.CalculatePath(allPos[currentDestinationIndex].position, path);
         agent.SetPath(path);
         print("SetNextPathOver");
@@ -193,11 +379,21 @@ public class EnemyAI : MonoBehaviour
    
    
     }
+
+    NavMeshLink tryFindLink() {
+
+        NavMeshLink nowLink = (NavMeshLink)agent.navMeshOwner;
+        return nowLink;
+    }
+
     public void lastDance()
     {
+        print("我要去死了，我的位置是:" + transform.position + "     核心的位置是：" + core.transform.position + "     我现在的index是：" + currentDestinationIndex+"     我的fallout是："+fallOut);
         Destroy(gameObject);
         if (scripts != null && scripts.enemy.Contains(gameObject))
             scripts.enemy.Remove(gameObject);
+
+        if(Vector3.Distance(transform.position,core.transform.position) < 5f)
         coreControl.damaged(atk);
     }
 
@@ -236,12 +432,14 @@ public class EnemyAI : MonoBehaviour
             //scripts.enemy.Remove(gameObject);
             if (scripts!=null)
             {
+                /*
                 if (scripts.isGold)
                 {
                     CardManager engine = GameObject.Find("Engine").GetComponent<CardManager>();
                     engine.currentMoney += scripts.goldIncome;
                     engine.UpdateMoneyText();
                 }
+                */
                
             }
             if (!isStatic)
@@ -268,6 +466,8 @@ public class EnemyAI : MonoBehaviour
     public void InitializeMonster()
     {
         agent = GetComponent<NavMeshAgent>();
+        // agent.autoTraverseOffMeshLink = false;
+        agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
         currentDestinationIndex = 0;
         core = GameObject.Find("CORE");
         coreControl = core.GetComponent<coreController>();
@@ -356,15 +556,72 @@ public class EnemyAI : MonoBehaviour
         RemoveFromTarget();
         // 等待1秒
         yield return new WaitForSeconds(1f);
-
+    
         // 重新启用NavMeshAgent,关闭碰撞体，agent找寻路线
         c.isTrigger = true;
         agent.enabled = true;
         fallOut = false;
         backToMesh();
+ 
        
-        print("SetNextPathOver");
+       // print("SetNextPathOver");
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (fallOut2 && collision.gameObject.CompareTag("ground"))
+        {
+            print("1111111111111111111111111111111111111111111111111");
+            agent.enabled = true;
+            isStunOver = true;
+        }
+        else
+            print("???????????????????????????????????????");
+    }
+    
+    private void OnCollisionStay(Collision collision)
+    {
+        if (fallOut2 && collision.gameObject.CompareTag("ground"))
+        {
+            print("222222222222222222222222222222222222222222222222");
+            agent.enabled = true;
+            isStunOver = true;
+        }
+        else
+            print("???????????????????????????????????????");
+    }
+    
+
+    public IEnumerator DisableAndEnableNavMeshAgent2()
+    {
+        print("kinematic已经关了");
+        rig.isKinematic = false;
+        time = 0;
+        if (agent.isOnOffMeshLink)
+        {
+            agent.CompleteOffMeshLink();
+        }
+            // 关闭NavMeshAgent
+            isStunOver = false;
+        agent.enabled = false;
+        Collider c = GetComponent<Collider>();
+        c.isTrigger = false;
+        fallOut2 = true;
+        //RemoveFromTarget();
+        // 等待1秒
+        print("失衡--开始等待");
+        yield return new WaitForSeconds(1f);
+        if (!isStunOver) {
+
+            agent.enabled = true;
+            isStunOver = true;
+        }
+        
+
+        // print("SetNextPathOver");
+    }
+
+
 
     public void ShowBlood()
     {
@@ -381,30 +638,54 @@ public class EnemyAI : MonoBehaviour
 
     public void backToMesh()
     {
-        if (!agent.isOnNavMesh)
+        if (agent.isOnNavMesh)
         {
-          
+
             print("isnotOnMesh");
-            RaycastHit hit;
-            float raycastDistance = 0.01f;
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance))
-            {
-                // 如果射线击中了地面，认为物体已经落地
-                if (hit.collider.tag == "ground")
-                {
-                    print(hit);
+            //RaycastHit hit;
+            //float raycastDistance = 0.01f;
+            
+                    print("hit the ground");
                     NavMeshHit navMeshHit;
-                    if (NavMesh.FindClosestEdge(agent.transform.position, out navMeshHit, NavMesh.AllAreas))
+                    if (NavMesh.SamplePosition (transform.position, out navMeshHit, 2f,NavMesh.AllAreas))
                     {
-                        transform.position = navMeshHit.position;
-                        agent.CalculatePath(allPos[currentDestinationIndex].position, path);
-                        agent.SetPath(path);
-                        print("reset");
+                        if (transform.position.y-navMeshHit.position.y >0.5f )
+                        {
+                            print("回归信息：" + navMeshHit.position + "                       " + transform.position);
+                            transform.position = navMeshHit.position;
+                            agent.destination = allPos[currentDestinationIndex].position;
+                            agent.CalculatePath(allPos[currentDestinationIndex].position, path);
+                            agent.SetPath(path);
+
+                        }
+                        else
+                        {
+                    print("因为位置太低判定死亡");
+                            Destroy(gameObject);
+                        }
+
                     }
+                    else
+                    {
+                print("因为找不到Nav判定死亡");
+                Destroy(gameObject);
+                    }
+                    //print("reset" + agent.remainingDistance);
                 }
+                
 
-            }
+
+        else {
+            Destroy(gameObject);
+
+            //agent.destination = allPos[currentDestinationIndex].position;
+            agent.CalculatePath(allPos[currentDestinationIndex].position, path);
+            agent.SetPath(path);
+            
+            print("已经在网格上了哦");
+            Collider c = GetComponent<Collider>();
+            c.isTrigger = true;
         }
-
+            
     }
 }

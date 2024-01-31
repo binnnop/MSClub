@@ -34,17 +34,26 @@ public class SceneLoader : MonoBehaviour
     public void BackToBasement()
     {
         Time.timeScale = 1;
+        /*
         Manager manager = GameObject.Find("Manager").GetComponent<Manager>();
         manager.isBattling = true;
         manager.LoadGameData("battle");
-       
+        */
+        MapManager mapManager= GameObject.Find("MapManager").GetComponent<MapManager>();
+        mapManager.backToMap();
+
     }
 
     public void retreat()
     {
         Time.timeScale = 1;
+        /*
         Manager manager = GameObject.Find("Manager").GetComponent<Manager>();
         manager.LoadGameData("battle");
+        */
+        MapManager mapManager = GameObject.Find("MapManager").GetComponent<MapManager>();
+        mapManager.isBattle = false;
+        mapManager.backToMap();
     }
 
 }

@@ -341,6 +341,9 @@
     <Reference Include="UnityEditor.Graphs">
       <HintPath>D:\UnityEditor\2021.3.16f1c1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>D:\UnityEditor\2021.3.16f1c1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>D:\UnityEditor\2021.3.16f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
@@ -927,6 +930,14 @@
     <ProjectReference Include="AllIn1VfxAssmebly.csproj">
       <Project>{3A386C81-3564-1D91-3DB5-8309E7B08A3F}</Project>
       <Name>AllIn1VfxAssmebly</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{9BB65BC6-FFE8-671D-CE49-AFEC04677A46}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{36D5234F-D2B6-731D-10B3-B46261FAE95B}</Project>
+      <Name>NavMeshComponentsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="AllIn1VfxTexDemoAssembly.csproj">
       <Project>{74323BB6-0EDB-EB1E-0C38-B9AD576DE7F0}</Project>

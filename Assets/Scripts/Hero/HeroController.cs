@@ -27,12 +27,16 @@ public class HeroController : MonoBehaviour,IPointerClickHandler, IBeginDragHand
     public RectTransform rectTransform;
     public Vector2 initialPosition;  // 保存初始位置
 
+    private cameraRotation cameraMove;
+
 
 
     void Start()
     {
+
         born = false;
         heroButton = GetComponent<Button>();
+        cameraMove = GameObject.Find("Main Camera").GetComponent<cameraRotation>();
         heroButton.onClick.AddListener(ToggleHeroState);
         cardManager = GameObject.Find("Engine").GetComponent<CardManager>();
         rectTransform = GetComponent<RectTransform>();
@@ -119,6 +123,7 @@ public class HeroController : MonoBehaviour,IPointerClickHandler, IBeginDragHand
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        cameraMove.isDrag = true;
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             Base[] bases = FindObjectsOfType<Base>();
@@ -169,17 +174,20 @@ public class HeroController : MonoBehaviour,IPointerClickHandler, IBeginDragHand
     public void OnPointerEnter(PointerEventData eventData)
     {
         // 鼠标悬停时显示说明文字
+        cameraMove.isDrag = true;
         ShowTooltip();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         // 鼠标移开时隐藏说明文字
+        cameraMove.isDrag = false;
         HideTooltip();
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        cameraMove.isDrag = false;
         rectTransform.anchoredPosition = initialPosition;
         Base[] bases = FindObjectsOfType<Base>();
         foreach (Base baseObject in bases)

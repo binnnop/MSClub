@@ -9,11 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllIn1VfxAssmebly", "AllIn1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllIn1VfxDemoScriptAssemblies", "AllIn1VfxDemoScriptAssemblies.csproj", "{176440F3-F75A-907C-739E-32F796F81790}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponents", "NavMeshComponents.csproj", "{9BB65BC6-FFE8-671D-CE49-AFEC04677A46}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllIn1VfxTexDemoAssembly", "AllIn1VfxTexDemoAssembly.csproj", "{74323BB6-0EDB-EB1E-0C38-B9AD576DE7F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polyperfect.Common", "Polyperfect.Common.csproj", "{7B87C4CC-4317-ADCD-1613-197179C51125}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{1986D04B-FAE3-4D8C-D1D2-D9279D89CB69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsEditor", "NavMeshComponentsEditor.csproj", "{36D5234F-D2B6-731D-10B3-B46261FAE95B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,10 @@ Global
 		{176440F3-F75A-907C-739E-32F796F81790}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{176440F3-F75A-907C-739E-32F796F81790}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{176440F3-F75A-907C-739E-32F796F81790}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BB65BC6-FFE8-671D-CE49-AFEC04677A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BB65BC6-FFE8-671D-CE49-AFEC04677A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BB65BC6-FFE8-671D-CE49-AFEC04677A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BB65BC6-FFE8-671D-CE49-AFEC04677A46}.Release|Any CPU.Build.0 = Release|Any CPU
 		{74323BB6-0EDB-EB1E-0C38-B9AD576DE7F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{74323BB6-0EDB-EB1E-0C38-B9AD576DE7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74323BB6-0EDB-EB1E-0C38-B9AD576DE7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,6 +57,10 @@ Global
 		{1986D04B-FAE3-4D8C-D1D2-D9279D89CB69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1986D04B-FAE3-4D8C-D1D2-D9279D89CB69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1986D04B-FAE3-4D8C-D1D2-D9279D89CB69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D5234F-D2B6-731D-10B3-B46261FAE95B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D5234F-D2B6-731D-10B3-B46261FAE95B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D5234F-D2B6-731D-10B3-B46261FAE95B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D5234F-D2B6-731D-10B3-B46261FAE95B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

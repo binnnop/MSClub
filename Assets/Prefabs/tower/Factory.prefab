@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1215712604386794735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8081998131755049169}
@@ -59,7 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dcd2d8db791eb6488d3b194950afd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyIncreaseInterval: 5
+  greenArea: {fileID: 0}
+  model: {fileID: 8081998131755049169}
+  moneyIncreaseInterval: 1
   amount: 1
   generateTowerInterval: 60
 --- !u!1001 &2883824956792110162

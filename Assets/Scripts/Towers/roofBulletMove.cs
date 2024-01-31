@@ -54,7 +54,7 @@ public class roofBulletMove : BulletMove
         time += Time.deltaTime;
         float test = verticalSpeed - g * time;
         transform.Translate(moveDirection.normalized * sSpeed * Time.deltaTime, Space.World);
-        transform.Translate(Vector3.up * test * Time.deltaTime, Space.World);
+        transform.Translate(Vector3.up * test * 4*Time.deltaTime, Space.World);
         float testAngle = -angle + angleSpeed * time;
         transform.eulerAngles = new Vector3(testAngle, transform.eulerAngles.y, transform.eulerAngles.z);
 
@@ -79,9 +79,7 @@ public class roofBulletMove : BulletMove
 
                 if (enemy != null)
                 {
-                    // 对敌人造成伤害
-                    enemy.scripts = scripts;
-                    enemy.hurt(atk);
+                    dealDamage(enemy, atk);
                 }
             }
         }

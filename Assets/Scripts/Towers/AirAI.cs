@@ -80,7 +80,7 @@ public class AirAI : TowerAI
 
     }
 
-    private void Attack()
+    private new void Attack()
     {
 
         GameObject bullet = Instantiate(bulletPrefab, firePos.position, Quaternion.identity);

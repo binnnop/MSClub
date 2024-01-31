@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6269452268049277575}
   - component: {fileID: 3118184347008074860}
   - component: {fileID: 7458512483402963274}
+  - component: {fileID: 3915088531638663533}
   m_Layer: 0
   m_Name: tile_block2
   m_TagString: Untagged
@@ -42,7 +43,7 @@ MeshRenderer:
   m_GameObject: {fileID: 7138863366265336973}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -82,4 +83,18 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7138863366265336973}
+  m_Mesh: {fileID: -8157207596852023632, guid: 8a1b9f59d0618754485f3c5daa06aafc, type: 3}
+--- !u!64 &3915088531638663533
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138863366265336973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: -8157207596852023632, guid: 8a1b9f59d0618754485f3c5daa06aafc, type: 3}

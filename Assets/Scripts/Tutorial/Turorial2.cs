@@ -7,11 +7,17 @@ public class Turorial2 : MonoBehaviour
     public float[] intervals;
     public GameObject[] tips;
     public int index = 0;
+    public List<AudioClip> audios;
+    public AudioSource audioSource;
 
 
     void Start()
-    {    
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audios[0];
+        audioSource.Play();
         StartCoroutine(ShowTips());
+
     }
 
     // Update is called once per frame

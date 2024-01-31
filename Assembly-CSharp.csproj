@@ -60,18 +60,24 @@
     <Compile Include="Assets\Extra\Voxel Character Pack\Demo\Scripts\CameraController.cs" />
     <Compile Include="Assets\Samples\Universal RP\12.1.8\URP Package Samples\CameraStacking\3D Skybox\Scripts\SkyboxCamera.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningBoltPrefabScript.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemySkill.cs" />
     <Compile Include="Assets\Scripts\BulletMoveAir.cs" />
+    <Compile Include="Assets\Scripts\Normal\HideSelfAfterStart.cs" />
     <Compile Include="Assets\Scripts\BattleSpecial\weigh.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningFieldScript.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningBoltScript.cs" />
+    <Compile Include="Assets\Scripts\BattleSpecial\TriggerDown.cs" />
     <Compile Include="Assets\Samples\Universal RP\12.1.8\URP Package Samples\SharedAssets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningMeshSurfaceScript.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Skill_ChefHeal.cs" />
     <Compile Include="Assets\Scripts\cardDrag.cs" />
     <Compile Include="Assets\Samples\Universal RP\12.1.8\URP Package Samples\SharedAssets\Scripts\AutoLoadPipelineAsset.cs" />
     <Compile Include="Assets\Scripts\Tutorial\OK.cs" />
+    <Compile Include="Assets\Scripts\Map\MapManager.cs" />
     <Compile Include="Assets\ProceduralLightning\Demo\Scripts\DemoScriptReloadSceneEsc.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAI_Fly.cs" />
     <Compile Include="Assets\Scripts\Base.cs" />
+    <Compile Include="Assets\Scripts\Map\mapCard.cs" />
     <Compile Include="Assets\Extra\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\ThunderAndLightningScript.cs" />
     <Compile Include="Assets\Scripts\CardManager.cs" />
@@ -82,6 +88,7 @@
     <Compile Include="Assets\Scripts\UI\leftGo.cs" />
     <Compile Include="Assets\Scripts\Tutorial\preBuild.cs" />
     <Compile Include="Assets\ProceduralLightning\Demo\Scripts\DemoConfigureScript.cs" />
+    <Compile Include="Assets\Scripts\Map\MapInside.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningEditorUtilities.cs" />
     <Compile Include="Assets\Scripts\UI\SpeedController.cs" />
     <Compile Include="Assets\Samples\Universal RP\12.1.8\URP Package Samples\LensFlares\Scripts\ScreenSpacePlacement.cs" />
@@ -89,9 +96,11 @@
     <Compile Include="Assets\ProceduralLightning\Demo\Scripts\DemoScript2D.cs" />
     <Compile Include="Assets\Scripts\test.cs" />
     <Compile Include="Assets\Scripts\MonsterSpawnPortal.cs" />
+    <Compile Include="Assets\Scripts\Towers\GeographyAI.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningGizmoScript.cs" />
     <Compile Include="Assets\ProceduralLightning\Demo\Scripts\DemoScriptManualAutomatic.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\Spells\LightningBeamSpellScript.cs" />
+    <Compile Include="Assets\Scripts\Towers\SiantAI.cs" />
     <Compile Include="Assets\Scripts\coreController.cs" />
     <Compile Include="Assets\Scripts\BulletMove.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAI.cs" />
@@ -104,6 +113,7 @@
     <Compile Include="Assets\ProceduralLightning\Demo\Scripts\DemoScript.cs" />
     <Compile Include="Assets\Scripts\Towers\SupporterAI.cs" />
     <Compile Include="Assets\Scripts\Towers\BlazeAI.cs" />
+    <Compile Include="Assets\Scripts\Towers\BlastAI.cs" />
     <Compile Include="Assets\Scripts\Base\proxyManager.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningBoltDataStructures.cs" />
     <Compile Include="Assets\Fx\unity模型Teleport Effect 1.0-Portal Particle\Scrpt\CameraHolder.cs" />
@@ -116,6 +126,7 @@
     <Compile Include="Assets\Fx\Small Fire Pack\Scripts\CreateFireballs.cs" />
     <Compile Include="Assets\Scripts\UI\TypeWrite.cs" />
     <Compile Include="Assets\Scripts\JsonUtil.cs" />
+    <Compile Include="Assets\Scripts\BattleSpecial\StartFire.cs" />
     <Compile Include="Assets\ProceduralLightning\Demo\Scripts\DemoMeshScript.cs" />
     <Compile Include="Assets\Prefabs\Hero\flyAfterSecond.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningSplineScript.cs" />
@@ -124,6 +135,8 @@
     <Compile Include="Assets\Scripts\Base\BaseCamera.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningWhipScript.cs" />
     <Compile Include="Assets\Scripts\Tutorial\Turorial2.cs" />
+    <Compile Include="Assets\Scripts\BattleSpecial\InterfaceDown.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Limb.cs" />
     <Compile Include="Assets\Scripts\Base\LevelInfo.cs" />
     <Compile Include="Assets\Scripts\Hero\Fire.cs" />
     <Compile Include="Assets\Fx\Small Fire Pack\Scripts\Projectile.cs" />
@@ -139,30 +152,36 @@
     <Compile Include="Assets\Scripts\Base\towerEdit.cs" />
     <Compile Include="Assets\Scripts\Towers\SentryAI.cs" />
     <Compile Include="Assets\Scripts\Base\baseCard.cs" />
+    <Compile Include="Assets\Scripts\Map\MapSceneManager.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\MeshHelper.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningBoltShapeConeScript.cs" />
     <Compile Include="Assets\Scripts\cardInfo.cs" />
     <Compile Include="Assets\Scripts\Base\HeroPanel.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningGenerator.cs" />
+    <Compile Include="Assets\Scripts\BattleSpecial\Fix\FixMultipleLink.cs" />
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\PreviewPath.cs" />
+    <Compile Include="Assets\Scripts\Map\MapLevel.cs" />
     <Compile Include="Assets\ProceduralLightning\Demo\Scripts\DemoScriptRotate.cs" />
     <Compile Include="Assets\Scripts\Base\BaseCharacter.cs" />
     <Compile Include="Assets\ProceduralLightning\Demo\Scripts\DemoPlayerControllerScript.cs" />
     <Compile Include="Assets\ProceduralLightning\Demo\Scripts\DemoScriptMoveRandomly.cs" />
     <Compile Include="Assets\Scripts\Towers\LightningAI.cs" />
     <Compile Include="Assets\Scripts\Enemy\balloonTrigger.cs" />
+    <Compile Include="Assets\Scripts\Towers\BurnAI.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningBoltPathScript.cs" />
     <Compile Include="Assets\Scripts\Base\GameData.cs" />
     <Compile Include="Assets\Scripts\UI\PauseGame.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\LightningBoltTransformTrackerScript.cs" />
     <Compile Include="Assets\Extra\ErbGameArt\3D Lasers Pack\Demo scene lasers\EGA_DemoLasers.cs" />
     <Compile Include="Assets\Scripts\Towers\roofBulletMove.cs" />
+    <Compile Include="Assets\Scripts\Towers\BuffallAI.cs" />
     <Compile Include="Assets\Fx\Small Fire Pack\Scripts\Demo.cs" />
     <Compile Include="Assets\Scripts\priceAdd.cs" />
     <Compile Include="Assets\MagicaVoxel Toolbox\Script\RectPacking\RectPaking.cs" />
     <Compile Include="Assets\Scripts\Towers\LightningCollision.cs" />
     <Compile Include="Assets\Scripts\cameraRotation.cs" />
+    <Compile Include="Assets\Scripts\Towers\FortressAI.cs" />
     <Compile Include="Assets\Scripts\UI\LinkedSet.cs" />
     <Compile Include="Assets\Scripts\Base\baseHeroPivot.cs" />
     <Compile Include="Assets\Extra\Voxel Character Pack\Demo\Scripts\CharacterSelector.cs" />
@@ -174,6 +193,7 @@
     <Compile Include="Assets\Scripts\UI\Outline.cs" />
     <Compile Include="Assets\Scripts\Tutorial\Tutorial1.cs" />
     <Compile Include="Assets\ProceduralLightning\Demo\Scripts\DemoPathScript.cs" />
+    <Compile Include="Assets\Scripts\Normal\ShowObjectDelay.cs" />
     <Compile Include="Assets\ProceduralLightning\Demo\Scripts\DemoScriptPrefabTutorial.cs" />
     <Compile Include="Assets\ProceduralLightning\Prefab\Scripts\Spells\LightningParticleCollisionForwarder.cs" />
     <Compile Include="Assets\MagicaVoxel Toolbox\Script\SavingSystem\Saving.cs" />
@@ -1045,6 +1065,14 @@
     <ProjectReference Include="AllIn1VfxAssmebly.csproj">
       <Project>{3A386C81-3564-1D91-3DB5-8309E7B08A3F}</Project>
       <Name>AllIn1VfxAssmebly</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{9BB65BC6-FFE8-671D-CE49-AFEC04677A46}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{36D5234F-D2B6-731D-10B3-B46261FAE95B}</Project>
+      <Name>NavMeshComponentsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="AllIn1VfxTexDemoAssembly.csproj">
       <Project>{74323BB6-0EDB-EB1E-0C38-B9AD576DE7F0}</Project>

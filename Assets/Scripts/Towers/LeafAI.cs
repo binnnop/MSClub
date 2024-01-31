@@ -33,19 +33,6 @@ public class LeafAI : TowerAI
 
     }
 
-    public void Attack()
-    {
-
-        GameObject bullet = Instantiate(bulletPrefab, firePos.position, Quaternion.identity);
-
-        //¸ø×Óµ¯¹Ò½Å±¾
-        bullet.AddComponent<BulletMove>().target = targetObject;
-        bullet.GetComponent<BulletMove>().scripts = this;
-        bullet.GetComponent<BulletMove>().atk = towerAtk + heroRobotIncrease;
-        if (targetObject != null) 
-        bullet.transform.LookAt(targetObject.transform.position);
-        totalDamage += (towerAtk + heroRobotIncrease);
-    }
 
     
 }
